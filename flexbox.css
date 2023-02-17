@@ -1,0 +1,177 @@
+body{
+    background-color: beige;
+}
+.flexcontainer{
+    background-color: beige;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.flexcontainerstart{
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    border-radius: 30px;
+}
+.start{
+    color: green;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-size: 40px;
+    border-radius: 30px;
+}
+
+.pay1{
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px ;
+}
+.pay-1{
+    color: green;
+    font-size: 40px ;
+}
+.flexcontainergood{
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    border-radius: 30px;
+}
+.good{
+    color: orange;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-size: 40px;
+    border-radius: 30px;
+}
+.pay2{
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    padding: 30px ;
+}
+.pay-2{
+    color: orange;
+    font-size: 40px ;
+}
+.flexcontainerultima{
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    border-radius: 30px;
+}
+.ultima{
+    color: rgb(218, 113, 131);
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-size: 40px;
+    border-radius: 30px;
+}
+.pay3{
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    padding: 30px ;
+}
+.pay-3{
+    color: rgb(218, 113, 131);
+    font-size: 40px ;
+}
+.flexcontainervip{
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    border-radius: 30px;
+}
+.vip{ 
+    color: blue;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-size: 40px;
+    border-radius: 30px;
+}
+.pay4{
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+.pay-4{
+    color: blue ;
+    font-size: 40px ;
+}
+.item{
+    color: gray;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-size: 15px;
+    border: 1px solid gray;
+}
+.joinnow1{
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    text-align:center;
+    font-size: 15px;
+    margin: 20px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.joinnow2{
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    text-align:center;
+    font-size: 15px;
+    margin: 20px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.joinnow3{
+    background-color: rgb(218, 113, 131);
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    text-align:center;
+    font-size: 15px;
+    margin: 20px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.joinnow4{
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    text-align:center;
+    font-size: 15px;
+    margin: 20px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+@media only screen and (max-width: 375px) {
+    .flexcontainer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
