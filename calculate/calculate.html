@@ -9,20 +9,24 @@
 <body>
     <label for="birthdate">Birth Date:</label>
     <input type="date" id="birthdate" name="birthdate"
-        value="2023-02-27"
-        min="1800-01-01" max="2023-02-27">
+        value=""
+        min="1800-01-01" max="2023-03-07">
         <script>
         function calculateage() {
-            now= new Date();
+            var now= new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth();
+            var day = now.getDay();
             document.getElementById("birthdate").innerHTML;
-            var age= now - birthdate;
-            console.log(age);
+            var min = Math.abs(now.getTime() - birthdate);
+            var day = Math.ceil(min / (1000 * 3600 * 24));
+            console.log(day);
         }
         </script>
         <button type="button" onclick="calculateage()">Age</button>
         <script type="text/javascript">
             document.write("yaşınız " + calculateage() );
             </script>
-        
+            
 </body>
 </html>
