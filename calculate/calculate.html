@@ -5,28 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="calculate.css">
 </head>
 <body>
-    <label for="birthdate">Birth Date:</label>
+    <div class="calculate">
+    <label class="birthdate">Birth Date:</label>
     <input type="date" id="birthdate" name="birthdate"
         value=""
-        min="1800-01-01" max="2023-03-07">
+        min="0000-00-00" max="2023-03-07">
+        <button class="button" onclick="calculateage()">Age</button>
+        </div>
         <script>
         function calculateage() {
             var now= new Date();
-            var year = now.getFullYear();
-            var month = now.getMonth();
-            var day = now.getDay();
-            document.getElementById("birthdate").innerHTML;
-            var min = Math.abs(now.getTime() - birthdate);
-            var day = Math.ceil(min / (1000 * 3600 * 24));
-            console.log(day);
+            var birthdate= document.getElementById("birthdate").value;
+            console.log(birthdate,typeof birthdate)
+            var birth= new Date(birthdate)
+            alert(yearDiff(now,birth)-1);
+        }
+        function yearDiff(dt1, dt2) 
+        {
+        var diffYear =(dt2.getTime() - dt1.getTime()) / 1000;
+        diffYear /= (60 * 60 * 24);
+        return Math.abs(Math.round(diffYear/365.25));
         }
         </script>
-        <button type="button" onclick="calculateage()">Age</button>
-        <script type="text/javascript">
-            document.write("yaşınız " + calculateage() );
-            </script>
-            
+
 </body>
 </html>
