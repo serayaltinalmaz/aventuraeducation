@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="zikirmatik.css">
+</head>
+<body>
+        <h1>Sayaç</h1>
+        <p id="counter">0</p>
+    <div class="zikirmatik">    
+        <button class="arti">+</button>
+        <button class="eksi">-</button>
+</div>
+<script>
+    var counter = document.getElementById("counter");
+    var arti = document.querySelector(".arti");
+    var eksi = document.querySelector(".eksi");
+
+    var count = 0;
+    arti.addEventListener("click", ()=>{
+        count++;
+        updateDisplay();
+    });
+    eksi.addEventListener("click", ()=>{
+        count--;
+        updateDisplay();
+    });
+    function updateDisplay(){
+        counter.innerHTML = count;
+    };
+</script>
+</body>
+</html>

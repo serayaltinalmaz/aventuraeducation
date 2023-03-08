@@ -1,0 +1,31 @@
+.arti{
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    font-size: 15px;
+    margin: 50px 50px;
+    border-radius: 10px;
+}
+.eksi{
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    font-size: 15px;
+    margin: 50px 50px;
+    border-radius: 10px;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+#counter{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+.zikirmatik{
+    display: flex;
+    justify-content: center;
+}
