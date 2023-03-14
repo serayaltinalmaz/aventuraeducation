@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="skortablosu">
+        <h1>SKOR TABLOSU</h1>
+        <div id="skorlar">
+            <div id="oyuncuskoru">0</div>
+            <div id="pcskoru">0</div>
+        </div>
+        
+    </div>
     <div id="resimler">
         <img src="kagit.png" id="kagit" width="300" height="300" data-id="0">
         <img src="makas.png" id="makas" width="300" height="300" data-id="1">
@@ -18,17 +26,24 @@
     <div id="sonuc">
     </div>
     <script>
+        
+        
         var resimler=["kagit.png","makas.png","tas.png"];
         var tas=document.getElementById("tas");
         var kagit=document.getElementById("kagit");
         var makas=document.getElementById("makas");
         var pcSecim=document.getElementById("pc-secim");
         var sonucYazdir=document.getElementById("sonuc");
+        var oyuncuskoru=document.getElementById("oyuncuskoru");
+        var pcskoru=document.getElementById("pcskoru");
 
         kagit.onclick=secimYap;
         makas.onclick=secimYap;
         tas.onclick=secimYap;
         
+        var oyuncuskor=0;
+        var pcskor=0;
+
         function secimYap(){
             var pc= Rastgele();
             var secim= this.dataset.id;
@@ -39,14 +54,17 @@
                 else if(pc==0 && secim==1)
                 {
                 sonuc="Kazandın, makas kağıdı keser";
+                oskor(oyuncuskor);
                 }
                 else if(pc==0 && secim==2)
                 {
                 sonuc="Kaybettin, kağıt taşı sarar";
+                pskor(pcskor);
                 }
                 else if(pc==1 && secim==0)
                 {
                 sonuc="Kaybettin, makas kağıdı keser";
+                pskor(pcskor);
                 }
                 else if(pc==1 && secim==1)
                 {
@@ -55,14 +73,17 @@
                 else if(pc==1 && secim==2)
                 {
                 sonuc="Kazandın, Taş makası kırar";
+                oskor(oyuncuskor);
                 }
                 else if(pc==2 && secim==0)
                 {
                 sonuc="Kazandın, kağıt taşı sarar";
+                oskor(oyuncuskor);
                 }
                 else if(pc==2 && secim==1)
                 {
                 sonuc="Kaybettin, Taş makası kırar";
+                pskor(pcskor);
                 }
                 else if(pc==2 && secim==2)
                 {
@@ -71,11 +92,34 @@
                 
                 sonucYazdir.innerHTML=sonuc; //dom
                 }
+        var oyunsayisi=prompt("Oyun kaç round olsun?");
+        var bitis= Math.floor(Number(oyunsayisi)/2)+1;
+        console.log(bitis);
         function Rastgele(){
             var sayi= Math.floor(Math.random()*2);
             pcSecim.src=resimler[sayi]; 
             return sayi;
             }
+        function oskor(oyuncugalibiyeti){
+            oyuncugalibiyeti=oyuncugalibiyeti+1;
+            oyuncuskor=oyuncugalibiyeti;
+            oyuncuskoru.innerHTML=oyuncuskor;
+            if(oyuncuskor===bitis){
+                sonuc="OYUN BİTTİ SİZ KAZANDINIZ"
+            }
+            sonucYazdir.innerHTML=sonuc;
+        }
+        function pskor(pcgalibiyeti){
+            pcgalibiyeti=pcgalibiyeti+1;
+            pcskor=pcgalibiyeti;
+            pcskoru.innerHTML=pcskor;
+            if(pcskor===bitis){
+                sonuc="OYUN BİTTİ BİLGİSAYAR KAZANDI"
+            }
+            sonucYazdir.innerHTML=sonuc;
+        }
+        
+
     </script>
 </body>
 </html>
