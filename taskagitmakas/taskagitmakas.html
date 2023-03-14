@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="resimler">
+        <img src="kagit.png" id="kagit" width="300" height="300" data-id="0">
+        <img src="makas.png" id="makas" width="300" height="300" data-id="1">
+        <img src="tas.png" id="tas" width="300" height="300" data-id="2">
+    </div> 
+    <div id="pc-sonuc">
+        <img src="" id="pc-secim" width="300" height="300">
+    </div>
+    <div id="sonuc">
+    </div>
+    <script>
+        var resimler=["kagit.png","makas.png","tas.png"];
+        var tas=document.getElementById("tas");
+        var kagit=document.getElementById("kagit");
+        var makas=document.getElementById("makas");
+        var pcSecim=document.getElementById("pc-secim");
+        var sonucYazdir=document.getElementById("sonuc");
+
+        kagit.onclick=secimYap;
+        makas.onclick=secimYap;
+        tas.onclick=secimYap;
+        
+        function secimYap(){
+            var pc= Rastgele();
+            var secim= this.dataset.id;
+                if(pc==0 && secim==0) //kağıt0 makas1 tas2
+                {
+                sonuc="ikiniz de aynı seçimi yaptınız";
+                }
+                else if(pc==0 && secim==1)
+                {
+                sonuc="Kazandın, makas kağıdı keser";
+                }
+                else if(pc==0 && secim==2)
+                {
+                sonuc="Kaybettin, kağıt taşı sarar";
+                }
+                else if(pc==1 && secim==0)
+                {
+                sonuc="Kaybettin, makas kağıdı keser";
+                }
+                else if(pc==1 && secim==1)
+                {
+                sonuc="ikiniz de aynı seçimi yaptınız";
+                }
+                else if(pc==1 && secim==2)
+                {
+                sonuc="Kazandın, Taş makası kırar";
+                }
+                else if(pc==2 && secim==0)
+                {
+                sonuc="Kazandın, kağıt taşı sarar";
+                }
+                else if(pc==2 && secim==1)
+                {
+                sonuc="Kaybettin, Taş makası kırar";
+                }
+                else if(pc==2 && secim==2)
+                {
+                sonuc="ikiniz de aynı seçimi yaptınız";
+                }
+                
+                sonucYazdir.innerHTML=sonuc; //dom
+                }
+        function Rastgele(){
+            var sayi= Math.floor(Math.random()*2);
+            pcSecim.src=resimler[sayi]; 
+            return sayi;
+            }
+    </script>
+</body>
+</html>
