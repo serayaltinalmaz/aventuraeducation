@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="number" placeholder="Bir sayı giriniz">
+    <button onclick="ekle()">Ekle</button>
+    <button onclick="topla()">Topla</button>
+    <p id="array">Dizi Elemanları:</p>
+    <p id="sum">Toplamları: </p>
+    <script>
+        var numbers=[];
+        function ekle(){
+            var number= document.getElementById("number").value;
+            numbers.push(Number(number));
+            document.getElementById("array").innerHTML ="Dizi Elemanları:" + numbers;
+        }
+        function topla(){
+            var sum = numbers.reduce((accumulator, currentValue) => {
+                return accumulator + currentValue;
+            }, 0);
+            document.getElementById("sum").innerHTML ="Toplamları:" + sum;
+        }
+
+
+    </script>
+</body>
+</html>
