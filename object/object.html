@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="object.css">
+</head>
+<body>
+    <form id="form">
+        <label for="adi">Ad</label>
+        <input type="text" id="adi" placeholder="Adınızı giriniz"> <br>
+        <label for="soyadi">Soyad</label>
+        <input type="text" id="soyadi" placeholder="Soyadınızı giriniz"> <br>
+        <label for="email">Mail</label>
+        <input type="email" id="email" placeholder="Mailinizi giriniz"> <br>
+        <label for="telno">Telefon</label>
+        <input type="number" id="telno" placeholder="Telefonunuzu giriniz"> <br>
+        <button id="gonder"> Gönder </button>
+    </form>
+
+    <script>
+        var form = document.getElementById("form");
+        var adi=document.getElementById("adi");
+        var soyadi=document.getElementById("soyadi");
+        var email=document.getElementById("email");
+        var telno=document.getElementById("telno");
+
+        function ekle(event) {
+        event.preventDefault();
+        var veriler = {
+        adi: adi.value,
+        soyadi: soyadi.value,
+        email: email.value,
+        telno: telno.value
+        };
+        var jsonveri = JSON.stringify(veriler);
+        console.log(jsonveri);
+    }
+        form.addEventListener("submit", ekle);
+        
+    </script>
+</body>
+</html>
