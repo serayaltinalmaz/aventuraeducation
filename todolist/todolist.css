@@ -1,0 +1,39 @@
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#addbutton{
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    font-size: 15px;
+    margin: 20px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+#co{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+p{
+    display: flex;
+    justify-content: center;
+}
+div{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+#b1{
+    border-radius: 30px;
+    background-color: rgb(184, 34, 34);
+    
+}

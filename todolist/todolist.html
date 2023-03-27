@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="todolist.css">
+</head>
+<body>
+    <div id="b1">
+    <h1>To Do List</h1>
+    <div id="co">
+    <input type="text" id="list" placeholder="Add something"style="padding:20px;"> 
+    <button id="addbutton" onclick="ekle()">Add</button>
+</div>
+    <div id="container">
+        
+    </div>
+</div>
+    <script>
+
+        var container=document.getElementById("container");
+        var todolist= [];
+        
+        function ekle(){
+            var list= document.getElementById("list").value;
+            var id= Math.random();
+            var veriler={
+                id:id,
+                todo: list,
+                iscompleted: false
+            }
+            todolist.push(veriler);
+            console.log(todolist);
+            var div= document.createElement("div");
+            div.classList.add=(div);
+            var p= document.createElement("p");
+            p.classList.add=(p);
+            var tickbutton = document.createElement("button");
+            var button= document.createElement("button");
+            div.appendChild(p);
+            div.appendChild(tickbutton);
+            div.appendChild(button);
+            p.innerHTML=veriler.todo;
+            button.innerHTML="Delete";
+            tickbutton.innerHTML = "✔";
+            div.id= veriler.id;
+            container.appendChild(div); 
+            button.addEventListener("click",function() {sil(veriler.id)});
+            tickbutton.addEventListener("click", function() {complete(veriler)});
+            
+        }
+        
+        function sil(id){
+            var divid= document.getElementById(id);
+            container.removeChild(divid);
+        }
+            
+        function complete(veriler) {
+            var compenent=document.getElementById(veriler.id);
+            if(veriler.iscompleted===false){
+                veriler.iscompleted= true
+            }
+            else{
+                veriler.iscompleted=false
+            }
+            if (veriler.iscompleted===true){
+                compenent.style.textDecoration="line-through"
+            }
+            else{
+                compenent.style.textDecoration="none"
+            }
+        }
+        
+    </script>
+</body>
+</html>
