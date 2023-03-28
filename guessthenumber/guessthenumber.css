@@ -1,0 +1,48 @@
+.container{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 100px;
+    background-color: lightslategray;
+    border-radius: 30px;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+}
+p{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+#hak{
+    display: flex;
+    justify-content: center;
+}
+#container2{
+    display: flex;
+    justify-content: center;
+}
+#sonuc{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    font-size: 30px;
+}
+#guess{
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 8px;
+}
+#checkbutton{
+    color: whitesmoke;
+    background-color: black;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+#checkbutton:hover {
+    background-color: navy;
+}

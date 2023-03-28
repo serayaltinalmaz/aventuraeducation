@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="guessthenumber.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Doğru sayıyı bulabilir misin?</h1>
+        <p>0 ve 100 arasında bir tahminde bulun! <br> Sonucu görmek için butona tıkla.</p>
+        <p id="hak">10 tahmin hakkın var!</p>
+        <div id="container2">
+            <input type="number" id="guess" placeholder="Bir sayı tahmin et">
+            <button id="checkbutton" onclick="check()">✔</button>
+        </div>
+        <div id="sonuc"></div>
+    </div>
+
+    <script>
+        let oyunsayisi=10;
+        let sayi = Math.floor(Math.random()*101);
+        console.log("Random:"+sayi);
+        let sonuc=document.getElementById("sonuc");
+        let button=document.getElementById("checkbutton");
+        let hak=document.getElementById("hak");
+
+        function check(){
+            let guess=document.getElementById("guess").value;
+            if(guess==sayi){
+                sonuc.innerHTML="Tebrikler! Doğru cevap:"+sayi;
+                console.log("Tebrikler! Doğru cevap:"+sayi);
+            }
+            else if(guess>sayi){
+                sonuc.innerHTML="Daha küçük bir tahminde bulun!";
+                console.log("Daha küçük bir tahminde bulun!");
+            }
+            else{
+                sonuc.innerHTML="Daha büyük bir tahminde bulun!";
+                console.log("Daha büyük bir tahminde bulun!");
+            }
+            oyunsayisi--;
+            hak.innerHTML=oyunsayisi+" tahmin hakkın var!";
+            if(oyunsayisi==0){
+                sonuc.innerHTML = "Doğru cevap: " + sayi;
+                console.log("Hakkınız bitti. Doğru cevap: " + sayi);
+                document.getElementById("guess").disabled = true;
+                document.getElementById("checkbutton").disabled = true;
+            }
+            if(oyunsayisi==0){
+                hak.innerHTML="Hakkınız bitti."
+            }
+        }
+    </script>
+</body>
+</html>
