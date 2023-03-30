@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reverse.css">
+</head>
+<body>
+    <div id="container">
+    <input id="kelime" type="text" placeholder="Kelime giriniz" >
+    <button id="cevir" onclick="cevir()">Ters çevir</button>
+    </div>
+    <p id="terskelime"></p>
+
+    <script>
+        let liste=[];
+        let tersliste=[];
+        function cevir(){
+            let kelime=document.getElementById("kelime").value;
+            for (let k = 0; k < kelime.length; k++) {
+            liste.push(kelime[k]);   
+            }
+            for(let t=liste.length-1;t>=0;t--){
+            tersliste.push(liste[t]);
+            console.log(tersliste);
+            }
+            var string=tersliste.join("");
+            document.getElementById("terskelime").innerHTML= string;
+            terskelime.style.backgroundColor = "rgb(64, 64, 148)";
+        }
+    </script>
+</body>
+</html>

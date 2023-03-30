@@ -1,0 +1,33 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 250px;
+    font-size: large;
+    background-color: rgb(121, 121, 180);
+}
+#container{
+    display: flex;
+    justify-content: center;
+}
+#terskelime{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    border-radius: 50px;
+    padding: 20px;
+}
+#kelime{
+    font-size: 25px;
+    margin: 16px;
+}
+#cevir{
+    color: whitesmoke;
+    background-color: rgb(64, 64, 148);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+}
+#cevir:hover{
+    background-color: black;
+}
