@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    
+    <div id="ball-container">
+    <img src="images/redball.jpg" id="ball1" width="100" height="100">
+    <img src="images/redball.jpg" id="ball2" width="100" height="100">
+    <img src="images/redball.jpg" id="ball3" width="100" height="100">
+    </div>
+
+    <div class="box-container">
+    <img src="images/box1.png" id="box1" width="200" height="200" data-id="1">
+    <img src="images/box2.png" id="box2" width="200" height="200" data-id="2">
+    <img src="images/box3.png" id="box3" width="200" height="200" data-id="3">
+    </div>
+
+    
+
+    <div id="result"></div>
+
+    <p id="game"></p>
+    <p id="win">Kazanılan oyun sayısı: </p>
+    
+    <div id="button-container">
+        <button id="play" onclick="location.reload()">Yeniden oyna</button>
+    </div>
+
+    <script src="./game.js"></script>
+</body>
+</html>
