@@ -1,34 +1,47 @@
-import './App.css';
+import React from 'react'
 import { useState, useEffect } from 'react';
+import './App.css';
 
-function App() {
+const App = () => {
   const [colors, setColors] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+  const inputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+  
+  useEffect(() => {
+    let array=[];
+    for (let i = 0; i < inputValue; i++) {
+      array.push(randomrgb())
+    }
+    setColors(array)
+  },[inputValue]);
 
-  function randomrgb() {
-    let r = randomNumber();
-    let g = randomNumber();
-    let b = randomNumber();
-    let colour = rgb(r, g, b);
-    setColors([...colors, colour]);
-  }
-  function randomNumber() {
-    let random = Math.floor(Math.random() * 255) + 0;
-    return random
-  }
-  function rgb(a, b, c) {
-    let colour = "rgb(" + a + ", " + b + ",  " + c + " )";
+  function randomrgb(){
+    var r= random();
+    var g= random();
+    var b= random();
+    var colour= rgb(r, g, b);
     return colour
-  }
-
+}
+  function random(){
+    var random= Math.floor(Math.random() * 255) + 0;
+    return random
+}
+  function rgb(a, b, c) {
+    var abc= "rgb(" + a + ", " + b + ",  "+ c +" )"
+    return abc
+}
   return (
-    <div className="App">
-      <button onClick={() => {
-        randomrgb()
-      }}>Color Generator</button>
-      {colors.map((color) =>
-        <div className="container" style={{backgroundColor:color}} > {color} </div>)}
+    <div className='App'>
+      <input type="number" value={inputValue} onChange={inputChange} />
+      {colors.map((colour) => (
+        <div className="container" style={{ backgroundColor: colour }}>
+          {colour}
+        </div>
+      ))}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

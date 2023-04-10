@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
 }
-
 .container{
   display: flex;
   margin: 10px;
@@ -12,16 +11,7 @@
   width: 800px;
   justify-content: center;
 }
-button{
-  display: flex;
-  color: whitesmoke;
-  background-color: rgb(57, 78, 80);
-  padding: 8px 16px;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  width: 120px;
-  height: 50px;
-  margin: 40px;
+input{
+  margin: 20px;
 }
 
