@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import './App.css';
+import {BsFillBasketFill} from 'react-icons/bs';
 
 
 function App() {
@@ -118,10 +119,27 @@ function App() {
         }
     ]
 
+    const [sidebar, setSidebar] = useState(false);
+    
+    const[basket, setBasket]= useState([]);
+
+
   return (
     <div className="App">
       
-      
+      <nav>
+        <div className="homepage">Anasayfa</div>
+        <div className="products">Ürünler</div>
+        <div className="com">İletişim</div>
+        <div className={sidebar===true? "basketicon-active":"basketicon-closed"} onClick={()=>{
+          if(sidebar==true){
+            setSidebar(false);
+          }else{
+            setSidebar(true);
+          }
+        }}><BsFillBasketFill/></div>
+      </nav>
+
       {products.map((product)=>(
         <div className='compenent'>
         <img src={product.productPic}></img>
@@ -129,10 +147,37 @@ function App() {
           <h1>{product.productName}</h1>
           <p className='desc'>{product.productDesc}</p>
           <p className='price'>{product.currentPrice} TL</p>
-          <button className='basket'>Sepete Ekle</button>
+          <button className='addtobasket' onClick={()=>{
+            let tempBasket = [...basket];
+            let items=tempBasket.find(item => item.id===product.id);
+            if(items===undefined){
+              tempBasket.push(product);
+              tempBasket[tempBasket.length-1].count=1;
+              setBasket(tempBasket);
+            }else{
+              tempBasket.forEach(basketproduct=>{
+                if(product.id===basketproduct.id){
+                  basketproduct.count++;
+                  setBasket(tempBasket)
+                }
+              })
+            }
+          }} >Sepete Ekle</button>
         </div>
       </div>
       ))}
+
+
+      <div className={sidebar===true? "sidebar-active":"sidebar-closed"}> 
+      {basket.map((product)=>(
+        <div className='basketcompenent'>
+          <img src={product.productPic}></img>
+          <p>{product.productName}</p>
+          <p>{product.currentPrice} TL</p>
+          <p>{product.count} Adet</p>
+        </div>
+      ))}
+      </div>
 
     </div>
   );
