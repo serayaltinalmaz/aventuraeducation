@@ -119,11 +119,33 @@ function App() {
         }
     ]
 
-    const [sidebar, setSidebar] = useState(false);
+    const[sidebar, setSidebar] = useState(false);
     
     const[basket, setBasket]= useState([]);
 
+    const[sumcount, setSumcount]= useState(0);
 
+    const[basketsum, setBasketsum]= useState(0);
+
+    useEffect(()=>{
+      let bsum=0;
+      basket.forEach(price=>{
+        if(price.count>1){
+          bsum += Number(price.count*price.currentPrice);
+        }else{
+          bsum += Number(price.currentPrice);
+        }
+      })
+      setBasketsum(bsum);
+      let summ=0;
+      basket.forEach(product=>{
+        
+        setSumcount(summ+=product.count)
+      })
+      console.log(setSumcount)
+    },[basket])
+  
+    
   return (
     <div className="App">
       
@@ -137,7 +159,9 @@ function App() {
           }else{
             setSidebar(true);
           }
-        }}><BsFillBasketFill/></div>
+        }}><BsFillBasketFill/> <p className='badge'>{sumcount}</p>
+
+        </div>
       </nav>
 
       {products.map((product)=>(
@@ -162,11 +186,11 @@ function App() {
                 }
               })
             }
+            
           }} >Sepete Ekle</button>
         </div>
       </div>
       ))}
-
 
       <div className={sidebar===true? "sidebar-active":"sidebar-closed"}> 
       {basket.map((product)=>(
@@ -177,6 +201,9 @@ function App() {
           <p>{product.count} Adet</p>
         </div>
       ))}
+      <p className='sum'>Sepet tutarı: {basketsum} TL</p>
+      
+      
       </div>
 
     </div>

@@ -1,6 +1,7 @@
 .App {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .compenent{
   display: flex;
@@ -105,6 +106,20 @@ nav{
   font-size: 25px;
   transition: right 0.3s;
   z-index:1;
+}
+.sum{
+  padding: 20px;
+}
+.badge{
+  background-color: red;
+  color: white;
+  border-radius: 30px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -58px;
+  right: -20px;
 }
 
 
