@@ -114,12 +114,43 @@ nav{
   background-color: red;
   color: white;
   border-radius: 30px;
-  font-size: 15px;
+  font-size: 12px;
   display: flex;
   justify-content: center;
   position: relative;
   top: -58px;
   right: -20px;
+  padding: 5px;
+}
+.count1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.count2{
+  display: flex;
+  flex-direction: row;
+}
+.count3{
+  font-size: 10px;
+}
+.addbutton{
+  background-color: black;
+  border: none;
+  color: white;
+  text-align:center;
+  border-radius: 30px;
+  height: 18px;
+  width: 18px;
+}
+.delbutton{
+  background-color: black;
+  border: none;
+  color: white;
+  text-align:center;
+  border-radius: 30px;
+  height: 18px;
+  width: 18px;
 }
 
 
