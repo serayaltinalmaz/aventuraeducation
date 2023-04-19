@@ -1,0 +1,29 @@
+p{
+  font-size: 12px;
+  border-bottom: 1px solid black;
+}
+.countries{
+  display: flex;
+  border: solid 2px black;
+  width: 480px;
+  height: 250px;
+  margin: 10px;
+  flex-direction: row;
+  border-radius: 10px;
+}
+.App{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.details{
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+}
+img{
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+}
