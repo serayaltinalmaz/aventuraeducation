@@ -188,7 +188,7 @@ function App() {
                   }
                 })
               }
-            }} >Sepete Ekle</button>
+            }} >Sepete Ekle <BsFillBasketFill /></button>
           </div>
         </div>
       ))}
@@ -196,9 +196,11 @@ function App() {
       <div className={sidebar === true ? "sidebar-active" : "sidebar-closed"}>
         {basket.map((product) => (
           <div className='basketcompenent'>
+            <div className='basketdetail'>
             <img src={product.productPic}></img>
             <p>{product.productName}</p>
             <p>{product.currentPrice} TL</p>
+            </div>
             <div className='count1'>
               <div className='count2'>
               <button className='addbutton' onClick={() => {
@@ -218,7 +220,7 @@ function App() {
                 </div>
               <div className='bin' onClick={()=>{
                 let tempBasket=[...basket];
-                tempBasket=tempBasket.filter(item => item.id !== product.id);
+                tempBasket=tempBasket.filter(item => item.id !== product.id); //eşleşmeyeni listeye atıyor eşleşeni siliyor eşleşen seçilen idli ürün çıktı yeni listede yok filtrelendi
                 setBasket(tempBasket);
               }}><RiDeleteBin5Line/></div>
             </div>
