@@ -1,6 +1,8 @@
 import './App.css';
+import { useState, useEffect } from 'react';
+import Nation from './component/Nation';
 function App() {
-  const countries = [
+  let countries = [
     {
       name: 'Afghanistan',
       capital: 'Kabul',
@@ -2013,19 +2015,42 @@ function App() {
       currency: 'Botswana pula'
     }
   ]
+  const [countryName, setCountryName] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+  const inputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const [checkedCountries, setCheckedCountries] = useState([]);
+  const checkboxChange = (event,country) => {
+    const isChecked = event.target.checked;
+    let newCheckedCountries;
+    if (isChecked===true) {
+      newCheckedCountries = [...checkedCountries];
+      newCheckedCountries.push(country);
+    } else {
+      newCheckedCountries = checkedCountries.filter((checkedCountries) => checkedCountries !== country);
+    }
+    setCheckedCountries(newCheckedCountries);
+    console.log(isChecked)
+    console.log(checkedCountries)
+  }; 
+
+  useEffect(() => {
+    let search = countries.filter((country) => (
+      country.name.toLowerCase().includes(inputValue.toLowerCase())
+    ));
+    setCountryName(search);
+  }, [inputValue]);
+
+
   return (
     <div className="App">
-      {countries.map((country)=>(
-        <div className="countries">
-        <img src={"https://iaaspr.tmgrup.com.tr/8a7cae/0/0/0/0/1152/768?u=https://iaspr.tmgrup.com.tr/2020/04/23/turk-bayragi-tarihcesi-ne-23-nisan-turk-bayragi-fotograflari-1587639637617.jpg&mw=650"}></img>
-        <div className="details">
-        <p>Name:{country.name}</p>
-        <p>Capital:{country.capital}</p>
-        <p>Languages:{country.languages}</p>
-        <p>Currency:{country.currency}</p>
-        <p>Population: {country.population < 1000000 ? country.population.toLocaleString() : (country.population / 1000000).toFixed(1) + "M"}</p>
-        </div>
+      <div className='search'>
+        <input type='text' value={inputValue} onChange={inputChange} placeholder='Search' />
       </div>
+      {countryName.map((country3) => (
+        <Nation checkedCountries={checkedCountries} checkboxChange={checkboxChange} country={country3} />
       ))
       }
     </div>

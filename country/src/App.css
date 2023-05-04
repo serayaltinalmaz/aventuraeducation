@@ -27,3 +27,9 @@ img{
   height: 200px;
   margin: 20px;
 }
+.search{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 20px;
+}
