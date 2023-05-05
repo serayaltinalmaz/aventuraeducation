@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import './App.css';
-import { BsFillBasketFill } from 'react-icons/bs';
-import {RiDeleteBin5Line} from 'react-icons/ri';
-
+import Productsc from './component/Productsc';
+import Navbar from './component/Navbar';
+import Basketc from './component/Basketc';
+import Basketclosed from './component/Basketclosed';
 function App() {
   const products =
     [
@@ -118,13 +119,9 @@ function App() {
         "count": 0,
       }
     ]
-
   const [sidebar, setSidebar] = useState(false);
-
   const [basket, setBasket] = useState([]);
-
   const [sumcount, setSumcount] = useState(0);
-
   const [basketsum, setBasketsum] = useState(0);
 
 
@@ -150,84 +147,13 @@ function App() {
   
   return (
     <div className="App">
-
       <nav>
-        <div className="homepage">Anasayfa</div>
-        <div className="products">Ürünler</div>
-        <div className="com">İletişim</div>
-        <div className={sidebar === true ? "basketicon-active" : "basketicon-closed"} onClick={() => {
-          if (sidebar == true) {
-            setSidebar(false);
-          } else {
-            setSidebar(true);
-          }
-        }}><BsFillBasketFill />
-        {sumcount > 0 && <p className='badge'>{sumcount}</p>} 
-        </div>
+        < Navbar sidebar={sidebar} setSidebar={setSidebar} sumcount={sumcount} />
       </nav>
-
-      {products.map((product) => (
-        <div className='compenent'>
-          <img src={product.productPic}></img>
-          <div className='details'>
-            <h1>{product.productName}</h1>
-            <p className='desc'>{product.productDesc}</p>
-            <p className='price'>{product.currentPrice} TL</p>
-            <button className='addtobasket' onClick={() => {
-              let tempBasket = [...basket];
-              let items = tempBasket.find(item => item.id === product.id);
-              if (items === undefined) {
-                tempBasket.push(product);
-                tempBasket[tempBasket.length - 1].count = 1;
-                setBasket(tempBasket);
-              } else {
-                tempBasket.forEach(basketproduct => {
-                  if (product.id === basketproduct.id) {
-                    basketproduct.count++;
-                    setBasket(tempBasket)
-                  }
-                })
-              }
-            }} >Sepete Ekle <BsFillBasketFill /></button>
-          </div>
-        </div>
+      {products.map((product) => (   
+        < Productsc product={product} basket={basket} setBasket={setBasket}/>
       ))}
-
-      <div className={sidebar === true ? "sidebar-active" : "sidebar-closed"}>
-        {basket.map((product) => (
-          <div className='basketcompenent'>
-            <div className='basketdetail'>
-            <img src={product.productPic}></img>
-            <p>{product.productName}</p>
-            <p>{product.currentPrice} TL</p>
-            </div>
-            <div className='count1'>
-              <div className='count2'>
-              <button className='addbutton' onClick={() => {
-                  let tempBasket=[...basket];
-                  product.count++;
-                setBasket(tempBasket);
-              }}>+</button>
-              <p className='count3'>{product.count} Adet</p>
-                <button className='delbutton' onClick={() => {
-                  let tempBasket = [...basket];
-                      product.count--;
-                    if (product.count === 0) {
-                      tempBasket = tempBasket.filter(item => item.id !== product.id);
-                    }
-                    setBasket(tempBasket);
-                }}>-</button>
-                </div>
-              <div className='bin' onClick={()=>{
-                let tempBasket=[...basket];
-                tempBasket=tempBasket.filter(item => item.id !== product.id); //eşleşmeyeni listeye atıyor eşleşeni siliyor eşleşen seçilen idli ürün çıktı yeni listede yok filtrelendi
-                setBasket(tempBasket);
-              }}><RiDeleteBin5Line/></div>
-            </div>
-          </div>
-        ))}
-        <p className='sum'>Sepet tutarı: {basketsum} TL</p>
-      </div>
+      < Basketclosed sidebar={sidebar} basket={basket} setBasket={setBasket} basketsum={basketsum} />
     </div>
   );
 }
