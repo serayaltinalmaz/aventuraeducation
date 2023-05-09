@@ -171,4 +171,57 @@ nav{
   justify-content: center;
   font-size: 15px;
 }
-
+.hearticon-closed{
+  position: absolute;
+  margin: 22px;
+  right: 60px;
+  width: 15px;
+  font-size: 25px;
+  transition: right 0.3s;
+  z-index:1;
+}
+.hearticon-active{
+  position: absolute;
+  margin: 22px;
+  right: 240px;
+  width: 15px;
+  font-size: 25px;
+  transition: right 0.3s;
+  z-index:1;
+}
+.likebasket-active{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0px; 
+  width: 200px;
+  height: 100%;
+  background-color: white;
+  padding: 20px;
+  transition: right 0.3s;
+  overflow-y: scroll;
+  z-index:1;
+  border: 2px solid gray;
+}
+.likebasket-closed{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: -250px; 
+  width: 200px;
+  height: 100%;
+  background-color: white;
+  padding: 20px;
+  transition: right 0.3s;
+  overflow-y: scroll;
+  z-index:1;
+}
+.favproduct{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 15px;
+  border-bottom: solid 2px #155263;
+}
