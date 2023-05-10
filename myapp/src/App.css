@@ -22,7 +22,6 @@
 }
 img{
   width: 100px;
-  margin-top: 30px;
 }
 h1{
   font-size: 15px;
@@ -224,4 +223,8 @@ nav{
   justify-content: center;
   font-size: 15px;
   border-bottom: solid 2px #155263;
+}
+.lot{
+  position: relative;
+  left: 70px;
 }

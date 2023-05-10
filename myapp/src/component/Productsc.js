@@ -1,17 +1,30 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { BsFillBasketFill } from 'react-icons/bs';
 import { AiOutlineHeart } from 'react-icons/ai';
+import Lottie from 'react-lottie-player'
+import likeanimation from '../lotties/likeanimation.json'
 function Productsc(props) {
+
+    const [likesegment, setLikesegment] = useState([0, 115]);
+
+    useEffect(() => {
+        if (props.product.fav) {
+            setLikesegment([0, 115]);
+        } else {
+            setLikesegment([116, 181]);
+        }
+    }, [props.product.fav]);
+
     return (
         <div className='compenent'>
             <div className='heart' onClick={() => {
                 let tempProducts = [...props.products];
                 tempProducts.map((elma) => {
-                    if(elma.id===props.product.id){
-                        if(elma.fav===true){
-                            props.product.fav=false;
-                        } else{
-                            props.product.fav=true;
+                    if (elma.id === props.product.id) {
+                        if (elma.fav === true) {
+                            props.product.fav = false;
+                        } else {
+                            props.product.fav = true;
                         }
                     }
                 }
@@ -19,7 +32,12 @@ function Productsc(props) {
                 console.log(tempProducts)
                 props.setProducts(tempProducts);
             }}>
-                <AiOutlineHeart /></div>
+                <div className='lot'><Lottie
+                    loop={false}
+                    segments={likesegment}
+                    animationData={likeanimation}
+                    play
+                    style={{ width: 50, height: 50 }} /> </div></div>
             <img src={props.product.productPic}></img>
             <div className='details'>
                 <h1>{props.product.productName}</h1>
