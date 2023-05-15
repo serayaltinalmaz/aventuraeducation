@@ -3,7 +3,8 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.compenent{
+
+.compenent {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,43 +14,48 @@
   border: solid rgb(185, 184, 184) 1px;
   border-radius: 30px;
 }
-.details{
+
+.details {
   display: flex;
   justify-content: end;
   flex-direction: column;
   align-items: center;
   padding: 10px;
 }
-img{
+
+img {
   width: 100px;
 }
-h1{
+
+h1 {
   font-size: 15px;
   display: -webkit-box;
   -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical; 
-  overflow:hidden;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.desc{
+.desc {
   font-size: 13px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical; 
-  overflow:hidden;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   margin: 2px;
 }
-.addtobasket{
+
+.addtobasket {
   background-color: #155263;
   border: none;
   color: white;
   padding: 8px 15px 8px 15px;
-  text-align:center;
+  text-align: center;
   font-size: 15px;
   margin: 20px 20px;
   border-radius: 30px
 }
-nav{
+
+nav {
   background-color: #ff9a3c;
   display: flex;
   flex-direction: row;
@@ -57,59 +63,87 @@ nav{
   height: 70px;
   justify-content: flex-start;
 }
-.homepage,.products,.com{
+
+.navnav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff9a3c;
+  padding: 10px;
+}
+
+.navnavnav {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navnavnav:hover {
+  color: whitesmoke;
+}
+
+.homepage,
+.products,
+.com {
   padding: 20px;
 }
-.sidebar-active{
+
+.sidebar-active {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: fixed;
   top: 0;
-  right: 0px; 
+  right: 0px;
   width: 200px;
   height: 100%;
   background-color: white;
   padding: 20px;
   transition: right 0.3s;
   overflow-y: scroll;
-  z-index:1;
+  z-index: 1;
   border: 2px solid gray;
 }
-.sidebar-closed{
+
+.sidebar-closed {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: fixed;
   top: 0;
-  right: -250px; 
+  right: -250px;
   width: 200px;
   height: 100%;
   background-color: white;
   padding: 20px;
   transition: right 0.3s;
   overflow-y: scroll;
-  z-index:1;
+  z-index: 1;
 }
-.basketicon-closed{
+
+.basketicon-closed {
   position: absolute;
   margin: 22px;
   right: 20px;
   width: 15px;
   font-size: 25px;
   transition: right 0.3s;
-  z-index:1;
+  z-index: 1;
 }
-.basketicon-active{
+
+.basketicon-active {
   position: absolute;
   margin: 22px;
   right: 240px;
   width: 15px;
   font-size: 25px;
   transition: right 0.3s;
-  z-index:1;
+  z-index: 1;
 }
-.sum{
+
+.sum {
   margin-bottom: 30px;
   padding: 20px;
   background-color: #ff9a3c;
@@ -118,7 +152,8 @@ nav{
   font-size: 15px;
   color: #155263;
 }
-.badge{
+
+.badge {
   background-color: red;
   color: white;
   border-radius: 30px;
@@ -130,101 +165,123 @@ nav{
   right: -20px;
   padding: 5px;
 }
-.count1{
+
+.count1 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   padding: 30px;
   padding-top: 1px;
 }
-.count2{
+
+.count2 {
   display: flex;
   flex-direction: column;
 }
-.count3{
+
+.count3 {
   font-size: 10px;
 }
-.addbutton{
+
+.addbutton {
   background-color: #155263;
   border: none;
   color: white;
-  text-align:center;
+  text-align: center;
   border-radius: 30px;
   margin: 5px;
 }
-.delbutton{
+
+.delbutton {
   background-color: #155263;
   border: none;
   color: white;
-  text-align:center;
+  text-align: center;
   border-radius: 30px;
   margin: 5px;
 }
-.basketcompenent{
+
+.basketcomponent {
   display: flex;
+}
+
+.basketcompenentborder {
   border-bottom: solid 2px #155263;
 }
-.basketdetail{
+
+.basketdetail {
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: 15px;
 }
-.hearticon-closed{
+
+.hearticon-closed {
   position: absolute;
   margin: 22px;
   right: 60px;
   width: 15px;
   font-size: 25px;
   transition: right 0.3s;
-  z-index:1;
+  z-index: 1;
 }
-.hearticon-active{
+
+.hearticon-active {
   position: absolute;
   margin: 22px;
   right: 240px;
   width: 15px;
   font-size: 25px;
   transition: right 0.3s;
-  z-index:1;
+  z-index: 1;
 }
-.likebasket-active{
+
+.likebasket-active {
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
-  right: 0px; 
+  right: 0px;
   width: 200px;
   height: 100%;
   background-color: white;
   padding: 20px;
   transition: right 0.3s;
   overflow-y: scroll;
-  z-index:1;
+  z-index: 1;
   border: 2px solid gray;
 }
-.likebasket-closed{
+
+.likebasket-closed {
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
-  right: -250px; 
+  right: -250px;
   width: 200px;
   height: 100%;
   background-color: white;
   padding: 20px;
   transition: right 0.3s;
   overflow-y: scroll;
-  z-index:1;
+  z-index: 1;
 }
-.favproduct{
+
+.favproduct {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 15px;
+  font-size: 13px;
   border-bottom: solid 2px #155263;
+  margin: 4px;
 }
-.lot{
+
+.lot {
   position: relative;
   left: 70px;
+}
+
+.favpagecomponent {
+  display: flex;
+
 }

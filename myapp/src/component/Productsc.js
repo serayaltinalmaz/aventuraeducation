@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { BsFillBasketFill } from 'react-icons/bs';
-import { AiOutlineHeart } from 'react-icons/ai';
 import Lottie from 'react-lottie-player'
 import likeanimation from '../lotties/likeanimation.json'
 function Productsc(props) {

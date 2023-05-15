@@ -1,12 +1,15 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import './App.css';
-import Productsc from './component/Productsc';
 import Navbar from './component/Navbar';
-import Basketclosed from './component/Basketclosed';
-import Like from './component/Like';
-
-
+import { Routes, Route, Link, NavLink } from 'react-router-dom';
+import Basketpage from './pages/Basketpage';
+import Productspage from './pages/Productspage';
+import Favproductspage from './pages/Favproductspage';
+import { BsFillBasketFill } from 'react-icons/bs';
+import { AiOutlineHeart } from 'react-icons/ai';
+import Basketcomponent from './component/Basketcomponent';
+import Favproductscomponent from './component/Favproductscomponent';
 function App() {
 
   const [sidebar, setSidebar] = useState(false);
@@ -40,15 +43,33 @@ function App() {
   return (
     <div className="App">
       <nav>
-        < Navbar likebar={likebar} setLikebar={setLikebar} sidebar={sidebar} setSidebar={setSidebar} sumcount={sumcount} />
+        <Navbar />  
+        <div className={likebar===true ? "hearticon-active": "hearticon-closed"} onClick={()=>{
+            if(likebar===true){
+                setLikebar(false)
+            }else{
+                setLikebar(true)
+            }
+        }}><AiOutlineHeart/></div>
+        <div className={sidebar === true ? "basketicon-active" : "basketicon-closed"} onClick={() => {
+            if (sidebar == true) {
+            setSidebar(false);
+            } else {
+            setSidebar(true);
+            }
+        }}><BsFillBasketFill />
+        {sumcount > 0 && <p className='badge'>{sumcount}</p>} 
+        </div>
+        {<Basketcomponent sidebar={sidebar} basket={basket} setBasket={setBasket} basketsum={basketsum} />}
+        {<Favproductscomponent products={products} setProducts={setProducts} basket={basket} setBasket={setBasket} likebar={likebar} setLikebar={setLikebar} />}
       </nav>
-      {products.map((product) => (
-        < Productsc setProducts={setProducts} products={products} product={product} basket={basket} setBasket={setBasket} />
-      ))}
-      <Basketclosed sidebar={sidebar} basket={basket} setBasket={setBasket} basketsum={basketsum} />
-      <Like products={products} likebar={likebar} setLikebar={setLikebar} />
+      <Routes>
+        <Route path='products' element={<Productspage setProducts={setProducts} products={products} basket={basket} setBasket={setBasket} />} />
+        <Route path='basketpage' element={ <Basketpage basket={basket} /> }/>
+        <Route path='favproductspage' element={ <Favproductspage products={products} /> }/>
+      </Routes>
     </div>
-  );
+  )
 }
 
 export default App;
