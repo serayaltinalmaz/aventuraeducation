@@ -1,8 +1,8 @@
 import React from 'react'
 import Basketclosed from './Basketclosed';
-const Basketcomponent = (props) => {
+const Basketcomponent = () => {
     return (
-        <Basketclosed sidebar={props.sidebar} basket={props.basket} setBasket={props.setBasket} basketsum={props.basketsum} />
+        <Basketclosed/>
     )
 }
 

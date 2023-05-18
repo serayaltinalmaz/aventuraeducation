@@ -1,8 +1,8 @@
 import React from 'react'
 import Like from './Like';
-const Favproductscomponent = (props) => {
+const Favproductscomponent = () => {
     return (
-        <Like products={props.products} likebar={props.likebar} setLikebar={props.setLikebar} />
+        <Like/>
     )
 }
 

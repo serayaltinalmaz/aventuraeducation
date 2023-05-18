@@ -285,3 +285,98 @@ nav {
   display: flex;
 
 }
+.container{
+  background-color: #e78b34;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container1{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.getstarted{
+  color: white;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-top: 30px;
+}
+.container2{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.aboutus{
+  color: white;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-top: 30px;
+}
+.container3{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.support{
+  color: white;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-top: 30px;
+}
+.container4{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.information{
+  color: white;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-top: 30px;
+}
+.container6{
+  background-color: #ff9a3c;
+  width: 100%;    
+  display: flex;
+  justify-content: space-around;
+}
+.logo{
+  color: white;
+  padding: 20px;
+  font-size: 25px;
+}
+.container5{
+  display: flex;
+  padding: 30px;
+  padding-right: 200px;
+  padding-left: 200px;
+}
+.item{
+  color: white;
+  padding: 10px;
+  font-size: 10px;
+}
+.item1{
+  color: white;
+  display: flex;
+  padding: 10px;
+  font-size: 10px;
+}
+.icons{
+
+  display: flex;
+  padding: 15px;
+}
+.icon{
+  font-weight: bold;
+  padding: 10px;
+}
+.icon:hover{
+  color: whitesmoke;
+}

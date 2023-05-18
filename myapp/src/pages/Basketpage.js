@@ -1,9 +1,13 @@
 import React from 'react'
 import Basketc from '../component/Basketc'
-const Basketpage = (props) => {
+import { useContext } from 'react';
+import { BasketContext } from '../BasketContext';
+
+const Basketpage = () => {
+    const { basket } = useContext(BasketContext);
     return (
-        props.basket.map((product) => (
-            <Basketc product={product} basket={props.basket} setBasket={props.setBasket} />
+        basket.map((product) => (
+            <Basketc isUnderline={false} product={product} />
         ))
     )
 }

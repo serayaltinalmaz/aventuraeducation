@@ -2,10 +2,13 @@ import React, { useEffect, useRef, useState } from 'react'
 import { BsFillBasketFill } from 'react-icons/bs';
 import Lottie from 'react-lottie-player'
 import likeanimation from '../lotties/likeanimation.json'
+import { useContext } from 'react';
+import { BasketContext } from '../BasketContext';
+import { ProductsContext } from '../ProductsContext';
 function Productsc(props) {
-
+    const { basket, setBasket } = useContext(BasketContext);
+    const { products, setProducts } = useContext(ProductsContext)
     const [likesegment, setLikesegment] = useState([0, 115]);
-
     useEffect(() => {
         if (props.product.fav) {
             setLikesegment([0, 115]);
@@ -17,11 +20,11 @@ function Productsc(props) {
     return (
         <div className='compenent'>
             <div className='heart' onClick={() => {
-                let tempProducts = [...props.products];
+                let tempProducts = [...products];
                 tempProducts.map((elma) => {
                     if (elma.id === props.product.id) {
                         if (elma.fav === true) {
-                            props.product.fav = false;
+                            props.product.fav = false
                         } else {
                             props.product.fav = true;
                         }
@@ -29,7 +32,7 @@ function Productsc(props) {
                 }
                 )
                 console.log(tempProducts)
-                props.setProducts(tempProducts);
+                setProducts(tempProducts);
             }}>
                 <div className='lot'><Lottie
                     loop={false}
@@ -43,17 +46,17 @@ function Productsc(props) {
                 <p className='desc'>{props.product.productDesc}</p>
                 <p className='price'>{props.product.currentPrice} TL</p>
                 <button className='addtobasket' onClick={() => {
-                    let tempBasket = [...props.basket];
+                    let tempBasket = [...basket];
                     let items = tempBasket.find(item => item.id === props.product.id);
                     if (items === undefined) {
                         tempBasket.push(props.product);
                         tempBasket[tempBasket.length - 1].count = 1;
-                        props.setBasket(tempBasket);
+                        setBasket(tempBasket);
                     } else {
                         tempBasket.forEach(basketproduct => {
                             if (props.product.id === basketproduct.id) {
                                 basketproduct.count++;
-                                props.setBasket(tempBasket)
+                                setBasket(tempBasket)
                             }
                         })
                     }
