@@ -12,7 +12,7 @@ root.render(
     <Productsprovider>
       <EventProvider>
         <Basketprovider>
-          <App />
+          <App/>
         </Basketprovider>
       </EventProvider>
     </Productsprovider>

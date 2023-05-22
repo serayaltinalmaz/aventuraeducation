@@ -5,15 +5,16 @@ import Basketpage from './pages/Basketpage';
 import Productspage from './pages/Productspage';
 import Favproductspage from './pages/Favproductspage';
 import Layout from './component/Layout';
-
+import Productdetail from './component/Productdetail';
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route element={<Layout/>}>
-        <Route path='products' element={<Productspage />} />
-        <Route path='basketpage' element={<Basketpage />} />
-        <Route path='favproductspage' element={<Favproductspage />} />
+        <Route path='/' element={<Layout/>}>
+          <Route path='products' element={<Productspage />} />
+          <Route path='productdetail/:id' element={<Productdetail />} />
+          <Route path='basketpage' element={<Basketpage />} />
+          <Route path='favproductspage' element={<Favproductspage />} />
         </Route>
       </Routes>
     </div>

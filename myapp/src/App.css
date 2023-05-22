@@ -380,3 +380,19 @@ nav {
 .icon:hover{
   color: whitesmoke;
 }
+.detpage{
+  margin: 25px;
+  display: flex;
+}
+.detpageprice{
+  font-size: 20px;
+}
+.detpageimg{
+    width: 300px;
+}
+.detpagename{
+  font-size: 20px;
+}
+.detpagedet{
+  padding: 50px;
+}

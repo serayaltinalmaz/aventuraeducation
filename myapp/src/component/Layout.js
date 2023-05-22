@@ -34,9 +34,9 @@ const Layout = () => {
                 <Basketcomponent />
                 <Favproductscomponent />
             </nav>
-            <Outlet />
+            <Outlet/>
             <Footer/>
-        </>
+            </>
     )
 }
 

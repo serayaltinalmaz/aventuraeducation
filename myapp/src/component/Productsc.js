@@ -5,6 +5,7 @@ import likeanimation from '../lotties/likeanimation.json'
 import { useContext } from 'react';
 import { BasketContext } from '../BasketContext';
 import { ProductsContext } from '../ProductsContext';
+import { Link } from 'react-router-dom';
 function Productsc(props) {
     const { basket, setBasket } = useContext(BasketContext);
     const { products, setProducts } = useContext(ProductsContext)
@@ -40,28 +41,29 @@ function Productsc(props) {
                     animationData={likeanimation}
                     play
                     style={{ width: 50, height: 50 }} /> </div></div>
-            <img src={props.product.productPic}></img>
-            <div className='details'>
-                <h1>{props.product.productName}</h1>
-                <p className='desc'>{props.product.productDesc}</p>
-                <p className='price'>{props.product.currentPrice} TL</p>
-                <button className='addtobasket' onClick={() => {
-                    let tempBasket = [...basket];
-                    let items = tempBasket.find(item => item.id === props.product.id);
-                    if (items === undefined) {
-                        tempBasket.push(props.product);
-                        tempBasket[tempBasket.length - 1].count = 1;
-                        setBasket(tempBasket);
-                    } else {
-                        tempBasket.forEach(basketproduct => {
-                            if (props.product.id === basketproduct.id) {
-                                basketproduct.count++;
-                                setBasket(tempBasket)
-                            }
-                        })
-                    }
-                }} >Sepete Ekle <BsFillBasketFill /></button>
-            </div>
+                <Link to={`/productdetail/${props.product.id}`}>
+                <img src={props.product.productPic} /></Link> 
+                <div className='details'>
+                    <h1>{props.product.productName}</h1>
+                    <p className='desc'>{props.product.productDesc}</p>
+                    <p className='price'>{props.product.currentPrice} TL</p>
+                    <button className='addtobasket' onClick={() => {
+                        let tempBasket = [...basket];
+                        let items = tempBasket.find(item => item.id === props.product.id);
+                        if (items === undefined) {
+                            tempBasket.push(props.product);
+                            tempBasket[tempBasket.length - 1].count = 1;
+                            setBasket(tempBasket);
+                        } else {
+                            tempBasket.forEach(basketproduct => {
+                                if (props.product.id === basketproduct.id) {
+                                    basketproduct.count++;
+                                    setBasket(tempBasket)
+                                }
+                            })
+                        }
+                    }} >Sepete Ekle <BsFillBasketFill /></button>
+                </div>
         </div>
     )
 }
