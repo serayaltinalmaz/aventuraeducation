@@ -5,11 +5,11 @@ import { BasketContext } from '../BasketContext';
 function Basketc(props) {
     const { basket, setBasket } = useContext(BasketContext);
     return (
-        <div className={`basketcomponent ${props.isUnderline === true && "basketcompenentborder"
+        <div className={`basketcomponent ${props.changeCSS === true && "basketcompenentborder"
             } `}>
             <div className='basketdetail'>
                 <img src={props.product.productPic}></img>
-                <p>{props.product.productName}</p>
+                <p className='productname'>{props.product.productName}</p>
                 <p>{props.product.currentPrice} TL</p>
             </div>
             <div className='count1'>

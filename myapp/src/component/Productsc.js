@@ -5,7 +5,7 @@ import likeanimation from '../lotties/likeanimation.json'
 import { useContext } from 'react';
 import { BasketContext } from '../BasketContext';
 import { ProductsContext } from '../ProductsContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 function Productsc(props) {
     const { basket, setBasket } = useContext(BasketContext);
     const { products, setProducts } = useContext(ProductsContext)
@@ -17,7 +17,10 @@ function Productsc(props) {
             setLikesegment([116, 181]);
         }
     }, [props.product.fav]);
-
+    const navigate = useNavigate()
+    const Detail = () => {
+        navigate(`/productdetail/${props.product.id}`);
+        };
     return (
         <div className='compenent'>
             <div className='heart' onClick={() => {
@@ -41,8 +44,7 @@ function Productsc(props) {
                     animationData={likeanimation}
                     play
                     style={{ width: 50, height: 50 }} /> </div></div>
-                <Link to={`/productdetail/${props.product.id}`}>
-                <img src={props.product.productPic} /></Link> 
+                <img src={props.product.productPic} onClick={Detail} />
                 <div className='details'>
                     <h1>{props.product.productName}</h1>
                     <p className='desc'>{props.product.productDesc}</p>

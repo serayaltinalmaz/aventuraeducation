@@ -9,7 +9,7 @@ function Basketclosed() {
     return (
         <div className={sidebar === true ? "sidebar-active" : "sidebar-closed"}>
             {displayedItems.map((product) => (
-                <Basketc isUnderline={true} product={product} />
+                <Basketc changeCSS={true} product={product} />
             ))}
             <Link to="basketpage"> Sepeti gör </Link>
             <p className='sum'>Sepet tutarı: {basketsum} TL</p>

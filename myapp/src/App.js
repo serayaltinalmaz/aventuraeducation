@@ -6,10 +6,12 @@ import Productspage from './pages/Productspage';
 import Favproductspage from './pages/Favproductspage';
 import Layout from './component/Layout';
 import Productdetail from './component/Productdetail';
+import Login from './pages/Login';
 function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path='/' element={<Login/>} />
         <Route path='/' element={<Layout/>}>
           <Route path='products' element={<Productspage />} />
           <Route path='productdetail/:id' element={<Productdetail />} />

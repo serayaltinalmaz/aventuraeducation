@@ -9,7 +9,7 @@ const Basketpage = () => {
     return (
         <>
         {basket.map((product) => (
-            <Basketc isUnderline={false} product={product} />
+            <div className='try'><Basketc changeCSS={false} product={product} /> </div>
         ))}
         <Outlet /> </>
     )
