@@ -1,6 +1,7 @@
 import React from 'react'
 import Lottie from 'react-lottie-player'
 import login from '../lotties/login.json'
+import kopke from "../lotties/kopke.json"
 import { useNavigate } from 'react-router-dom';
 const Login = () => {
     const navigate = useNavigate()
@@ -9,6 +10,10 @@ const Login = () => {
         };
     return (
         <>
+        <div className='kopke'><Lottie
+                    animationData={kopke}
+                    play
+                    style={{ width: 200, height: 200 }} /></div>
         <div className='loginlottie'><Lottie
                     animationData={login}
                     play

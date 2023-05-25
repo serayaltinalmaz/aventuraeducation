@@ -460,7 +460,11 @@ nav {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
+.kopke{
+  position: absolute;
+  top: 250px;
+  left: 299px;
+}
 
 
 
