@@ -1,9 +1,3 @@
-.App {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .compenent {
   display: flex;
   flex-direction: column;
@@ -218,10 +212,12 @@ nav {
   justify-content: center;
   font-size: 15px;
 }
-.heart{
-  position: relative ;
+
+.heart {
+  position: relative;
   z-index: 1;
 }
+
 .hearticon-closed {
   position: absolute;
   margin: 22px;
@@ -292,12 +288,14 @@ nav {
   display: flex;
 
 }
-.container{
+
+.container {
   background-color: #e78b34;
   display: flex;
   flex-wrap: wrap;
 }
-.container1{
+
+.container1 {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -305,135 +303,143 @@ nav {
   align-items: flex-start;
   justify-content: flex-start;
 }
-.getstarted{
+
+.getstarted {
   color: white;
   font-size: 15px;
   padding-left: 10px;
   padding-top: 30px;
 }
-.container2{
+
+.container2 {
   display: flex;
   flex-direction: column;
   width: 100%;
   flex-wrap: wrap;
 }
-.aboutus{
+
+.aboutus {
   color: white;
   font-size: 15px;
   padding-left: 10px;
   padding-top: 30px;
 }
-.container3{
+
+.container3 {
   display: flex;
   flex-direction: column;
   width: 100%;
   flex-wrap: wrap;
 }
-.support{
+
+.support {
   color: white;
   font-size: 15px;
   padding-left: 10px;
   padding-top: 30px;
 }
-.container4{
+
+.container4 {
   display: flex;
   flex-direction: column;
   width: 100%;
   flex-wrap: wrap;
 }
-.information{
+
+.information {
   color: white;
   font-size: 15px;
   padding-left: 10px;
   padding-top: 30px;
 }
-.container6{
+
+.container6 {
   background-color: #ff9a3c;
-  width: 100%;    
+  width: 100%;
   display: flex;
   justify-content: space-around;
 }
-.logo{
+
+.logo {
   color: white;
   padding: 20px;
   font-size: 25px;
 }
-.container5{
+
+.container5 {
   display: flex;
   padding: 30px;
   padding-right: 200px;
   padding-left: 200px;
 }
-.item{
+
+.item {
   color: white;
   padding: 10px;
   font-size: 10px;
 }
-.item1{
+
+.item1 {
   color: white;
   display: flex;
   padding: 10px;
   font-size: 10px;
 }
-.icons{
+
+.icons {
 
   display: flex;
   padding: 15px;
 }
-.icon{
+
+.icon {
   font-weight: bold;
   padding: 10px;
 }
-.icon:hover{
+
+.icon:hover {
   color: whitesmoke;
 }
+
 @media only screen and (max-width: 900px) {
-  .container5{
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
+  .container5 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
   }
-  .container1, .container2, .container3, .container4{
-      display: flex;
-      align-items: center;
+
+  .container1,
+  .container2,
+  .container3,
+  .container4 {
+    display: flex;
+    align-items: center;
   }
 }
-.detpage{
+
+.detpage {
   margin: 25px;
   display: flex;
   top: 100px;
 }
-.detpageprice{
+
+.detpageprice {
   font-size: 20px;
 }
-.detpageimg{
-    width: 300px;
+
+.detpageimg {
+  width: 300px;
 }
-.detpagename{
+
+.detpagename {
   font-size: 20px;
 }
-.detpagedet{
+
+.detpagedet {
   padding: 50px;
 }
-.logincontainer{
-  display: flex;
-  flex-direction: column;
-  border: 2px solid;
-  align-items: center;
-  position: absolute;
-  top: 200px;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #ff9a3c;
-}
-.username-password{
-  font-family: fantasy;
-}
-.loginbutton{
-  margin: 15px;
-  font-family: fantasy;
-}
-.addtobasketdetpage{
+
+.addtobasketdetpage {
   background-color: #155263;
   border: none;
   color: white;
@@ -441,11 +447,13 @@ nav {
   font-size: 15px;
   border-radius: 30px;
 }
-.lotdetpage{
+
+.lotdetpage {
   position: absolute;
   left: 450px;
 }
-.try{
+
+.try {
   display: flex;
   width: 18%;
   height: 18%;
@@ -454,17 +462,10 @@ nav {
   border-radius: 30px;
   padding: 15px;
 }
-.productname{
+
+.productname {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.kopke{
-  position: absolute;
-  top: 250px;
-  left: 299px;
-}
-
-
-

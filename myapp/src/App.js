@@ -9,10 +9,10 @@ import Productdetail from './component/Productdetail';
 import Login from './pages/Login';
 function App() {
   return (
-    <div className="App">
+    <div  style={{ minWidth: window.innerWidth, minHeight: window.innerHeight}}>
       <Routes>
-        <Route path='/' element={<Login/>} />
-        <Route path='/' element={<Layout/>}>
+        <Route path='/' element={<Login />} />
+        <Route path='/' element={<Layout />}>
           <Route path='products' element={<Productspage />} />
           <Route path='productdetail/:id' element={<Productdetail />} />
           <Route path='basketpage' element={<Basketpage />} />

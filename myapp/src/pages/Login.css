@@ -1,0 +1,49 @@
+@media only screen and (min-width:1200px) {
+
+    /*XL*/
+    .kopke {
+        position: relative;
+        top: 250px;
+        right: 160px;
+    }
+}
+
+@media only screen and (min-width:1538px) {
+    /*XL*/
+    .kopke {
+        left: 500px;
+    }
+}
+
+.error-message {
+    font-size: 11px;
+    text-align: center;
+}
+
+.logincontainer {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(3, 3, 46);
+    align-items: center;
+    width: 210px;
+    height: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: #ff9a3c;
+}
+.login-background {
+    background-color: #155263;
+}
+
+.username-password {
+    font-family: fantasy;
+}
+
+.loginbutton {
+    margin-top: 210px;
+    font-family: fantasy;
+    position: absolute;
+    border-radius: 10px;
+    padding: 4px;
+}
