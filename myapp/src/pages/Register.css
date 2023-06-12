@@ -1,0 +1,32 @@
+.registerpage{
+    background-color: #7fa99b;
+    display: flex;
+    justify-content: center;
+}
+.registercontainer{
+    background-color:#fdc57b ;
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 40px;
+    width: 850px;
+    height: 530px;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+.reg-info{
+    display: flex;
+    flex-direction: column;
+}
+.info{
+    font-family: fantasy;
+    font-size: 13px;
+}
+.savebutton{
+    font-family: fantasy;
+    border-radius: 10px;
+    padding: 4px;
+    margin-top: 15px;
+}
+.privacy{
+    display: flex;
+}

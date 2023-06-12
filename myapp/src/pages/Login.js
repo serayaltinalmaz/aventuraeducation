@@ -5,20 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import './Login.css';
-
-
+import Button from '../component/Button';
+import { BsFillBalloonHeartFill } from "react-icons/bs";
 const Login = () => {
 
     const navigate = useNavigate();
 
     const validationSchema = Yup.object({
         username: Yup.string().required('Kullanıcı adı zorunludur').max(15, 'Kullanıcı adı en fazla 15 karakter olmalıdır.'),
-        password: Yup.string()
-            .required('Şifre zorunludur')
-            .matches(
-                /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
-                'Şifre en az bir büyük harf, bir sayı ve bir noktalama işareti içermelidir.'
-            )
+        password: Yup.string().required('Şifre zorunludur')
     });
 
     const formik = useFormik({
@@ -35,9 +30,12 @@ const Login = () => {
     const LoginNavigate = () => {
         navigate("/products");
     };
+    const RegisterNavigate = () => {
+        navigate("/register");
+    };
 
     return (
-        <div className='login-background' style={{ display: "flex", justifyContent: "center", minHeight: "100vh" }}>
+        <div className='login-background' style={{ display: "flex", justifyContent: "center", alignItems:"center" , height: "100vh" }}>
             <form onSubmit={formik.handleSubmit}>
                 <div className='kopke'>
                     <Lottie
@@ -57,9 +55,6 @@ const Login = () => {
                             onBlur={formik.handleBlur}
                             value={formik.values.username}
                         />
-                        {formik.touched.username && formik.errors.username && (
-                            <div className="error-message">{formik.errors.username}</div>
-                        )}
                     </div>
                     <div className='password'>
                         <p className='username-password'>Şifre</p>
@@ -81,6 +76,12 @@ const Login = () => {
                         disabled={!formik.isValid}
                     >
                         Giriş Yap
+                    </button>
+                    <button
+                        className='registerbutton'
+                        onClick={RegisterNavigate}
+                    >
+                        Kaydol
                     </button>
                 </div>
             </form>

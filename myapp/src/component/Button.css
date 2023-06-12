@@ -1,0 +1,15 @@
+.custom-button {
+    width: 100px;
+    height: 50px;
+    border-radius: 41px;
+}
+.custom-button-nolabel{
+    width: 50px;
+    height: 50px;
+    border-radius: 41px;
+}
+.custom-button-noicon{
+    width: 80px;
+    height: 40px;
+    border-radius: 41px;
+}

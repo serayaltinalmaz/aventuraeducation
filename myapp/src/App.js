@@ -7,11 +7,15 @@ import Favproductspage from './pages/Favproductspage';
 import Layout from './component/Layout';
 import Productdetail from './component/Productdetail';
 import Login from './pages/Login';
+import Registerpage from './pages/Registerpage';
+import Privacy from './pages/Privacy';
 function App() {
   return (
     <div  style={{ minWidth: window.innerWidth, minHeight: window.innerHeight}}>
       <Routes>
         <Route path='/' element={<Login />} />
+        <Route path='register' element={ <Registerpage/> } />
+        <Route path='register/privacy' element={<Privacy />} /> 
         <Route path='/' element={<Layout />}>
           <Route path='products' element={<Productspage />} />
           <Route path='productdetail/:id' element={<Productdetail />} />
