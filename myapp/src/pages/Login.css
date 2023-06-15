@@ -19,8 +19,6 @@
     }
 }
 
-
-
 .logincontainer {
     display: flex;
     flex-direction: column;
@@ -44,25 +42,32 @@
     position: relative;
     z-index: 2;
 }
-
 .loginbutton {
-    margin-top: 200px;
     font-family: fantasy;
-    position: absolute;
-    border-radius: 10px;
-    padding: 4px;
+    height: 30px;
+    width: 90px;
+    margin: 5px;
 }
-
+.registerbutton {
+    font-family: fantasy;
+    height: 30px;
+    width: 90px;
+    margin: 5px;
+}
 .error-message {
     font-size: 11px;
     text-align: center;
 }
-
-.registerbutton {
-    margin-top: 240px;
-    font-family: fantasy;
-    position: absolute;
-    border-radius: 10px;
-    padding: 4px;
+.username{
+    height: 90px;
 }
+.password{
+    height: 90px;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    margin: 60px;
+}
+
 

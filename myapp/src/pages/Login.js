@@ -35,7 +35,7 @@ const Login = () => {
     };
 
     return (
-        <div className='login-background' style={{ display: "flex", justifyContent: "center", alignItems:"center" , height: "100vh" }}>
+        <div className='login-background' style={{ display: "flex", justifyContent: "center", height: "100vh" }}>
             <form onSubmit={formik.handleSubmit}>
                 <div className='kopke'>
                     <Lottie
@@ -55,6 +55,9 @@ const Login = () => {
                             onBlur={formik.handleBlur}
                             value={formik.values.username}
                         />
+                        {formik.touched.username && formik.errors.username && (
+                            <div className="error-message">{formik.errors.username}</div>
+                        )}
                     </div>
                     <div className='password'>
                         <p className='username-password'>Şifre</p>
@@ -70,19 +73,10 @@ const Login = () => {
                             <div className="error-message">{formik.errors.password}</div>
                         )}
                     </div>
-                    <button
-                        type="submit"
-                        className='loginbutton'
-                        disabled={!formik.isValid}
-                    >
-                        Giriş Yap
-                    </button>
-                    <button
-                        className='registerbutton'
-                        onClick={RegisterNavigate}
-                    >
-                        Kaydol
-                    </button>
+                    <div className='buttons'>
+                    <Button label="Giriş Yap" type="submit" className="loginbutton" disabled={!formik.isValid}  />
+                    <Button label="Kaydol" className="registerbutton" onClick={RegisterNavigate} />
+                    </div>
                 </div>
             </form>
         </div>

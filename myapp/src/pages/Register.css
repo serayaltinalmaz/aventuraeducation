@@ -23,9 +23,8 @@
 }
 .savebutton{
     font-family: fantasy;
-    border-radius: 10px;
-    padding: 4px;
-    margin-top: 15px;
+    margin-top: 25px;
+    margin-left: 250px;
 }
 .privacy{
     display: flex;

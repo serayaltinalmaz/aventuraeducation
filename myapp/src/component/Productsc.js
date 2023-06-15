@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import { BasketContext } from '../BasketContext';
 import { ProductsContext } from '../ProductsContext';
 import { Link, useNavigate } from 'react-router-dom';
+import Button from "./Button"
 function Productsc(props) {
     const { basket, setBasket } = useContext(BasketContext);
     const { products, setProducts } = useContext(ProductsContext)
@@ -49,7 +50,7 @@ function Productsc(props) {
                     <h1>{props.product.productName}</h1>
                     <p className='desc'>{props.product.productDesc}</p>
                     <p className='price'>{props.product.currentPrice} TL</p>
-                    <button className='addtobasket' onClick={() => {
+                    <Button className="addtobasket" label="Sepete Ekle " icon={<BsFillBasketFill/>} onClick={() => {
                         let tempBasket = [...basket];
                         let items = tempBasket.find(item => item.id === props.product.id);
                         if (items === undefined) {
@@ -64,7 +65,7 @@ function Productsc(props) {
                                 }
                             })
                         }
-                    }} >Sepete Ekle <BsFillBasketFill /></button>
+                    }}  />
                 </div>
         </div>
     )

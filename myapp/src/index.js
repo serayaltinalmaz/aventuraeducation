@@ -6,13 +6,16 @@ import { BrowserRouter } from 'react-router-dom';
 import Basketprovider, { BasketContext } from './BasketContext';
 import Productsprovider, { ProductsContext } from './ProductsContext';
 import EventProvider from './EventContext';
+import  DiscountProvider  from './DiscountContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Productsprovider>
       <EventProvider>
         <Basketprovider>
-          <App/>
+          <DiscountProvider>
+            <App />
+          </DiscountProvider>
         </Basketprovider>
       </EventProvider>
     </Productsprovider>

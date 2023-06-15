@@ -5,6 +5,7 @@ import "../pages/Register.css"
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
+import Button from '../component/Button';
 const Registerpage = () => {
     const validationSchema = Yup.object({
         name: Yup.string().required("Ad zorunludur"),
@@ -130,11 +131,7 @@ const Registerpage = () => {
                             )}
                             <p><Link to="privacy"> Gizlilik sözleşmesini</Link> kabul ediyorum.</p>
                         </div>
-                        <button
-                            type='submit'
-                            className='savebutton'
-                            disabled={!formik.isValid}
-                        > Kaydet </button>
+                        <Button label="Kaydet" type="submit" className="savebutton" disabled={!formik.isValid} />
                     </div>
                 </form>
             </div>
