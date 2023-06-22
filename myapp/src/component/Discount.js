@@ -1,5 +1,5 @@
-import React from 'react'
-import { useContext } from 'react';
+import React, { useLayoutEffect } from 'react'
+import { useContext, useEffect } from 'react';
 import { DiscountContext } from '../DiscountContext';
 import { BasketContext } from '../BasketContext';
 import Button from "./Button"
@@ -11,11 +11,35 @@ const Discount = () => {
         setDiscountThreshold,
         discountPercent,
         setDiscountPercent,
-        appliedDiscount
+        appliedDiscount,
+        setAppliedDiscount
     } = useContext(DiscountContext)
 
+    useEffect(() => {
+        const savedThreshold = localStorage.getItem('discountThreshold');
+        const savedPercent = localStorage.getItem('discountPercent');
+        if (savedThreshold) {//veri varsa set et
+            setDiscountThreshold(Number(savedThreshold)); //number çünkü değeri string olarak tutuyo
+        }
+        if (savedPercent) {
+            setDiscountPercent(Number(savedPercent));
+        }
+    }, []);// sayfa yüklendiğinde local storagedan verileri getitem ile al
+
+    useEffect(() => {
+        localStorage.setItem('discountThreshold', discountThreshold);
+        localStorage.setItem('discountPercent', discountPercent);
+    }, [discountThreshold, discountPercent]);// değerler değiştiğinde local storage a setitem ile kaydet
+
     const calculateDiscount = () => {
-        setDiscount(basketsum - appliedDiscount);
+        if (basketsum >= discountThreshold) {
+            let tempAppliedDiscount = (basketsum * discountPercent) / 100;
+            setDiscount(basketsum - tempAppliedDiscount);
+            setAppliedDiscount(tempAppliedDiscount);
+        } else{
+            setAppliedDiscount(0);
+            setDiscount(0);
+        }
     };
 
     const thresholdChange = (event) => {

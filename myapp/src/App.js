@@ -12,14 +12,14 @@ import Privacy from './pages/Privacy';
 import Discount from './component/Discount';
 function App() {
   return (
-    <div  style={{ minWidth: window.innerWidth, minHeight: window.innerHeight}}>
+    <div style={{ minWidth: window.innerWidth, minHeight: window.innerHeight }}>
       <Routes>
         <Route path='/' element={<Login />} />
-        <Route path='register' element={ <Registerpage/> } />
-        <Route path='register/privacy' element={<Privacy />} /> 
+        <Route path='register' element={<Registerpage />} />
+        <Route path='register/privacy' element={<Privacy />} />
         <Route path='/' element={<Layout />}>
           <Route path='products' element={<Productspage />} />
-          <Route path='manage' element={<Discount/>} />
+          <Route path='manage' element={<Discount />} />
           <Route path='productdetail/:id' element={<Productdetail />} />
           <Route path='basketpage' element={<Basketpage />} />
           <Route path='favproductspage' element={<Favproductspage />} />

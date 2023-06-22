@@ -5,35 +5,37 @@ import { useContext } from "react";
 import { BasketContext } from "../BasketContext";
 import { DiscountContext } from "../DiscountContext";
 function Basketclosed() {
-  const { basket, sidebar, basketsum } = useContext(BasketContext);
-  const displayedItems = basket.slice(0, 2); // İlk iki ürünü alacak şekilde listeyi sınırla
-  const {
-    discount,
-    setDiscount,
-    discountThreshold,
-    setDiscountThreshold,
-    discountPercent,
-    setDiscountPercent,
-    appliedDiscount,
-  } = useContext(DiscountContext);
+    const { basket, sidebar, basketsum } = useContext(BasketContext);
+    const displayedItems = basket.slice(0, 2); // İlk iki ürünü alacak şekilde listeyi sınırla
+    const {
+        discount,
+        setDiscount,
+        discountThreshold,
+        setDiscountThreshold,
+        discountPercent,
+        setDiscountPercent,
+        appliedDiscount,
+    } = useContext(DiscountContext);
 
-  return (
-    <div className={sidebar === true ? "sidebar-active" : "sidebar-closed"}>
-      {displayedItems.map((product) => (
-        <Basketc changeCSS={true} product={product} />
-      ))}
-      <Link to="basketpage" className="seebasket">
-        Sepeti gör
-      </Link>
-      {appliedDiscount > 0 && (
-        <p className="sum">Uygulanacak indirim= {appliedDiscount} </p>
-      )}
-      <p className="sum">
-        İndirimli sepet tutarı: {discountPercent ? discount : 0} TL
-      </p>
-      <p className="sum">Sepet tutarı: {basketsum} TL</p>
-    </div>
-  );
+    return (
+        <div className={sidebar === true ? "sidebar-active" : "sidebar-closed"}>
+            {displayedItems.map((product) => (
+                <Basketc changeCSS={true} product={product} />
+            ))}
+            <Link to="basketpage" className="seebasket">
+                Sepeti gör
+            </Link>
+            {appliedDiscount > 0 && (
+                <p className="sum">Uygulanacak indirim= {appliedDiscount} </p>
+            )}
+            {discount > 0 && (
+                <p className="sum">İndirimli sepet tutarı= {discount} TL</p>
+            )
+            }
+            
+            <p className="sum">Sepet tutarı: {basketsum} TL</p>
+        </div>
+    );
 }
 
 export default Basketclosed;
