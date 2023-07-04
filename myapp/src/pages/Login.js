@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 import './Login.css';
 import Button from '../component/Button';
 import { BsFillBalloonHeartFill } from "react-icons/bs";
+import InputComponent from '../component/InputComponent';
 const Login = () => {
 
     const navigate = useNavigate();
@@ -46,8 +47,7 @@ const Login = () => {
                 </div>
                 <div className='logincontainer'>
                     <div className='username'>
-                        <p className='username-password'>Kullanıcı Adı</p>
-                        <input
+                        <InputComponent label="Kullanıcı Adı"
                             type="text"
                             id="username"
                             name="username"
@@ -60,8 +60,7 @@ const Login = () => {
                         )}
                     </div>
                     <div className='password'>
-                        <p className='username-password'>Şifre</p>
-                        <input
+                        <InputComponent label="Şifre"
                             type="password"
                             id="password"
                             name="password"

@@ -3,6 +3,7 @@ import { useContext, useEffect } from 'react';
 import { DiscountContext } from '../DiscountContext';
 import { BasketContext } from '../BasketContext';
 import Button from "./Button"
+import InputComponent from './InputComponent';
 const Discount = () => {
     const { basketsum } = useContext(BasketContext);
     const { discount,
@@ -54,10 +55,20 @@ const Discount = () => {
 
     return (
         <div className='discount-container'>
-            <p>Kaç TL ve üzeri indirim uygulansın?</p>
-            <input type="number" value={discountThreshold} onChange={thresholdChange} />
-            <p>Yüzde kaç indirim uygulansın?</p>
-            <input type="number" value={discountPercent} onChange={percentChange} />
+
+            <InputComponent label="Kaç TL ve üzeri indirim uygulansın?"
+            className="discount-input"
+                type="number" 
+                value={discountThreshold} 
+                onChange={thresholdChange} 
+            />
+
+            <InputComponent label="Yüzde kaç indirim uygulansın?" 
+            className="discount-input"
+                type="number" 
+                value={discountPercent} 
+                onChange={percentChange} 
+            />
             <Button label="Uygula" onClick={calculateDiscount} className="discount-button" />
         </div>
     )

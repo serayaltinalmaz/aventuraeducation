@@ -1,7 +1,5 @@
 import React from 'react'
-import { RxTwitterLogo } from 'react-icons/rx';
-import { BsFacebook } from "react-icons/bs"
-import { FcGoogle } from "react-icons/fc"
+import SocialMedia from './SocialMedia';
 const Footer = () => {
     return (
     <div className="container">
@@ -30,13 +28,9 @@ const Footer = () => {
         </div>
     </div>
         <div className="container6">
-            <div className="logo">LOGO</div>
-                <div className="icons">
-                    <div className="icon"> <RxTwitterLogo/> </div>
-                    <div className="icon"> <BsFacebook/> </div>
-                    <div className="icon"> <FcGoogle/> </div>
-                </div>
+            <SocialMedia/>
         </div>
+        
     </div>
     )
 }

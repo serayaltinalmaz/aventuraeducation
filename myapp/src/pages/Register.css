@@ -17,10 +17,6 @@
     display: flex;
     flex-direction: column;
 }
-.info{
-    font-family: fantasy;
-    font-size: 13px;
-}
 .savebutton{
     font-family: fantasy;
     margin-top: 25px;
@@ -28,4 +24,8 @@
 }
 .privacy{
     display: flex;
+    position: relative;
+}
+.info{
+    width: 350px;
 }

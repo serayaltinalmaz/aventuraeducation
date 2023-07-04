@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Lottie from 'react-lottie-player';
 import register from "../lotties/register.json";
 import "../pages/Register.css"
@@ -6,6 +6,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 import Button from '../component/Button';
+import InputComponent from '../component/InputComponent';
 const Registerpage = () => {
     const validationSchema = Yup.object({
         name: Yup.string().required("Ad zorunludur"),
@@ -40,6 +41,10 @@ const Registerpage = () => {
             console.log(values);
         }
     })
+    useEffect(() => {
+    console.log(formik.errors)
+    }, [formik])
+    
     return (
         <div className='registerpage' style={{ minHeight: "100vh" }}>
             <div className='registercontainer'>
@@ -52,72 +57,66 @@ const Registerpage = () => {
                 </div>
                 <form onSubmit={formik.handleSubmit}>
                     <div className='reg-info'>
-                        <p className='info'> Ad </p>
-                        <input
+                        <InputComponent label="Ad"
+                        className="info"
                             type='text'
                             name='name'
                             value={formik.values.name}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
+                            error={formik.errors["name"]}
                         />
-                        {formik.touched.name && formik.errors.name && (
-                            <div className="error-message">{formik.errors.name}</div>
-                        )}
-                        <p className='info'> Soyad </p>
-                        <input
+
+                        <InputComponent label="Soyad"
+                        className="info"
                             type='text'
                             name='surname'
                             value={formik.values.surname}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
+                            error={formik.errors["surname"]}
                         />
-                        {formik.touched.surname && formik.errors.surname && (
-                            <div className="error-message">{formik.errors.surname}</div>
-                        )}
-                        <p className='info'> E-Posta </p>
-                        <input
+                        
+                        <InputComponent label="E-Posta"
+                        className="info"
                             type='email'
                             name='mail'
                             value={formik.values.mail}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
+                            error={formik.errors["mail"]}
                         />
-                        {formik.touched.mail && formik.errors.mail && (
-                            <div className="error-message">{formik.errors.mail}</div>
-                        )}
-                        <p className='info'> Kullanıcı Adı </p>
-                        <input
+
+                        <InputComponent label="Kullanıcı Adı"
+                        className="info"
                             type='text'
                             name='username'
                             value={formik.values.username}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
+                            error={formik.errors["username"]}
                         />
-                        {formik.touched.username && formik.errors.username && (
-                            <div className="error-message">{formik.errors.username}</div>
-                        )}
-                        <p className='info'> Şifre </p>
-                        <input
+                        
+                        <InputComponent label="Şifre"
+                        className="info"
                             type='password'
                             name='password'
                             value={formik.values.password}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
+                            error={formik.errors["password"]}
                         />
-                        {formik.touched.password && formik.errors.password && (
-                            <div className="error-message">{formik.errors.password}</div>
-                        )}
-                        <p className='info'> Şifre Tekrar </p>
-                        <input
+                        
+                        <InputComponent label="Şifre Tekrar"
+                        className="info"
                             type='password'
                             name='passwordagain'
                             value={formik.values.passwordagain}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
+                            error={formik.errors["passwordagain"]}
                         />
-                        {formik.touched.passwordagain && formik.errors.passwordagain && (
-                            <div className='error-message'>{formik.errors.passwordagain}</div>
-                        )}
+                        
                         <div className='privacy'>
                             <input
                                 type='checkbox'

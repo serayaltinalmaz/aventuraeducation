@@ -13,3 +13,18 @@
     height: 40px;
     border-radius: 41px;
 }
+.custom-button-icon-right{
+    width: 100px;
+    height: 50px;
+    border-radius: 41px;
+}
+.custom-button-icon-left{
+    width: 100px;
+    height: 50px;
+    border-radius: 41px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    column-gap: 4px;
+}

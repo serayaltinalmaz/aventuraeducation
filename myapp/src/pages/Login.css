@@ -37,11 +37,6 @@
     background-color: #155263;
 }
 
-.username-password {
-    font-family: fantasy;
-    position: relative;
-    z-index: 2;
-}
 .loginbutton {
     font-family: fantasy;
     height: 30px;
@@ -59,10 +54,10 @@
     text-align: center;
 }
 .username{
-    height: 90px;
+    height: 300px;
 }
 .password{
-    height: 90px;
+    height: 300px;
 }
 .buttons{
     display: flex;

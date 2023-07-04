@@ -50,7 +50,7 @@ function Productsc(props) {
                     <h1>{props.product.productName}</h1>
                     <p className='desc'>{props.product.productDesc}</p>
                     <p className='price'>{props.product.currentPrice} TL</p>
-                    <Button className="addtobasket" label="Sepete Ekle " icon={<BsFillBasketFill/>} onClick={() => {
+                    <Button className="addtobasket" label="Sepete Ekle " icon={<BsFillBasketFill/>} iconPosition="left" onClick={() => {
                         let tempBasket = [...basket];
                         let items = tempBasket.find(item => item.id === props.product.id);
                         if (items === undefined) {
