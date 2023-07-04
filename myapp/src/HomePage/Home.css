@@ -20,13 +20,13 @@
 .paragraph {
     color: #202020;
     font-size: 15px;
-    width: 400px;
+    width: 500px;
     text-align: center;
 }
 
 .homepageimg {
-    width: 400px;
-    height: 300px;
+    width: 500px;
+    height: 400px;
 }
 
 .card-detail {
@@ -34,26 +34,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 15px;
 }
 
 .standalone-detail {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 3rem;
+    margin: 20px;
 }
 
 .standalone-detail-right {
     display: flex;
-    margin-bottom: 3rem;
+    margin: 20px;
 }
 
 .standalone-detail-left {
     display: flex;
     flex-direction: row-reverse;
-    margin-bottom: 3rem;
+    margin: 20px;
 }
 .homepagecards{
     display: flex;
@@ -61,10 +62,19 @@
     justify-content:center ;
     align-items: center;
 }
+@media only screen and (max-width: 1024px) {
+    .homepageimg{
+        width: 450px;
+    }
+}
 @media only screen and (max-width: 900px) {
-    .card-detail {
-        display: flex;
-        flex-wrap: wrap;
+    .standalone-detail, .standalone-detail-left, .standalone-detail-right{
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        margin-top: 10px;
+    }
+    .homepageimg{
+        width:400px;
     }
 }

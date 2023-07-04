@@ -6,7 +6,7 @@ import { Outlet, Link } from 'react-router-dom';
 const Productspage = () => {
     const { products } = useContext(ProductsContext)
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <div className="productscomponent" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
             {products.map((product) => (
                 < Productsc product={product} />
             ))}

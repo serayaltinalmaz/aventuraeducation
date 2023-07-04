@@ -2,12 +2,13 @@ import React from 'react'
 import "../HomePage/Home.css"
 import "../HomePage/HomePageCard"
 import HomePageCard from '../HomePage/HomePageCard'
+import {FcHome} from "react-icons/fc"
 const Home = () => {
     return (
     <div className='homepagecards'>
         <div className='standalonepage'>
-                <h1 style={{color:"white", fontSize:"40px"}}>ANASAYFA</h1>
-                <p>icon zart zurt</p>
+                <h1 style={{color:"white", fontSize:"35px"}}>ANASAYFA</h1>
+                <p style={{fontSize:"35px"}}><FcHome/></p>
         </div>
         <HomePageCard 
             blueheader="Most flexible one page"
