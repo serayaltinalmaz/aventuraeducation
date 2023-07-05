@@ -1,0 +1,14 @@
+.flag{
+    width: 250px !important;
+    margin: 15px !important;
+}
+.headercell{
+    color: brown !important;
+    font-size: 20px;
+    margin: 55px !important;
+    text-align: center!important;
+}
+.tablecell{
+    font-size: 15px;
+    margin: 55px !important;
+}
