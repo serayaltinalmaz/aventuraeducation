@@ -6,7 +6,7 @@ const CountriesComponent = () => {
     const { countries } = useContext(CountriesContext)
     return (
         <div>
-            <Table basic='very' celled collapsing>
+            <Table  celled collapsing>
                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell className='headercell' >Flag</Table.HeaderCell>
