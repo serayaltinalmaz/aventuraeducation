@@ -17,9 +17,10 @@ const CompaniesComponent = () => {
                         <Table.HeaderCell className='headercell' >Fields</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
+                <Table.Body>
                 {companies.map((company) => (
-                    <Table.Body>
-                        <Table.Row>
+                    
+                        <Table.Row key={company.id}>
                             <Table.Cell>
                                 <Header as='h4' image>
                                     <Image className='flag' src={company.companyPic}  rounded size='big' />
@@ -32,8 +33,9 @@ const CompaniesComponent = () => {
                             <Table.Cell className='tablecell'>{company.website}</Table.Cell>
                             <Table.Cell className='tablecell'>{company.fields}</Table.Cell>
                         </Table.Row>
-                    </Table.Body>
+                    
                 ))}
+                </Table.Body>
             </Table>
         </div>
     )

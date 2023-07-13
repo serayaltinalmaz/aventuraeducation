@@ -15,6 +15,7 @@ export default class MyMenu extends Component {
                 <Menu inverted pointing secondary>
                     <Link to="countries">
                         <Menu.Item
+                        as="div"
                             name='Countries'
                             active={activeItem === 'Countries'}
                             onClick={this.handleItemClick}
@@ -22,6 +23,7 @@ export default class MyMenu extends Component {
                     </Link>
                     <Link to="companies">
                         <Menu.Item
+                        as="div"
                             name='Companies'
                             active={activeItem === 'Companies'}
                             onClick={this.handleItemClick}
@@ -29,6 +31,7 @@ export default class MyMenu extends Component {
                     </Link>
                     <Link to="products">
                         <Menu.Item
+                        as="div"
                             name='Products'
                             active={activeItem === 'Products'}
                             onClick={this.handleItemClick}

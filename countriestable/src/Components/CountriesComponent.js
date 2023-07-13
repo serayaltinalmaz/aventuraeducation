@@ -6,19 +6,19 @@ const CountriesComponent = () => {
     const { countries } = useContext(CountriesContext)
     return (
         <div>
-            <Table  celled collapsing>
+            <Table celled collapsing>
                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell className='headercell' >Flag</Table.HeaderCell>
                         <Table.HeaderCell className='headercell' >Country Name</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
-                {countries.map((country) => (
+                {countries.map((country, index) => (
                     <Table.Body>
-                        <Table.Row>
+                        <Table.Row key={country.name + index} >
                             <Table.Cell>
                                 <Header as='h4' image>
-                                    <Image className='flag' src={country.flag}  rounded size='big' />
+                                    <Image className='flag' src={country.flag} rounded size='big' />
                                 </Header>
                             </Table.Cell>
                             <Table.Cell className='tablecell'>{country.name}</Table.Cell>

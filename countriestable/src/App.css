@@ -5,10 +5,16 @@
 .headercell{
     color: brown !important;
     font-size: 20px;
-    margin: 55px !important;
     text-align: center!important;
 }
 .tablecell{
     font-size: 15px;
-    margin: 55px !important;
+    
+}
+.products-table {
+    width: 100vw;
+    margin-bottom: 1rem;
+}
+.products-table-container {
+    width: 100vw;
 }
