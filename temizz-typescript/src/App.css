@@ -1,0 +1,6 @@
+.p-datatable .p-column-header-content {
+    @apply justify-center
+}
+.p-datatable .p-datatable-header {
+    @apply flex justify-end !bg-secondary
+}
