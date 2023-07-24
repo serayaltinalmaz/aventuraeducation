@@ -7,6 +7,7 @@ import { Avatar } from 'primereact/avatar';
 //import { Button } from 'primereact/button';
 //import { tr } from "../Context/tr"
 import { InputText } from 'primereact/inputtext';
+import {CiMail} from "react-icons/ci"
 
 type Accounts = {
     firstName: string; lastName: string
@@ -52,8 +53,9 @@ const DataTableComponent = () => {
             window.location.href = `mailto:${emails.email}`;
         };
         return (
-            <a href={`mailto:${emails.email}`} onClick={handleClick}>
-                <p>{emails.email}</p>
+            <a  className="flex justify-start" href={`mailto:${emails.email}`} onClick={handleClick}>
+                <i className="mr-2 text-3xl text-primary" ><CiMail/></i>
+                <p> {emails.email}</p>
             </a>
         );
     };
@@ -70,7 +72,7 @@ const DataTableComponent = () => {
         setGlobalFilterValue(e.target.value);
     };
     const header = (
-        <div className="flex justify-content-end">
+        <div>
             <span className="p-input-icon-left">
                 <i className="pi pi-search" />
                 <InputText value={globalFilterValue} onChange={onGlobalFilterChange} placeholder="Ara" />
@@ -78,7 +80,8 @@ const DataTableComponent = () => {
         </div>
     );
     return (
-        <DataTable
+    <div>
+        <DataTable 
             className="bg-light2 py-4 px-6 rounded shadow"
             value={SupportFakeData}
             paginator
@@ -123,6 +126,7 @@ const DataTableComponent = () => {
                 body={MessageBodyTemplate}>
             </Column>
         </DataTable>
+    </div>
     )
 }
 

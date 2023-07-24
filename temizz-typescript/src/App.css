@@ -4,3 +4,11 @@
 .p-datatable .p-datatable-header {
     @apply flex justify-end !bg-secondary
 }
+.p-datatable>.p-datatable-wrapper {
+    /* overflow: inherit !important; */
+}
+.p-datatable .p-datatable-header{
+    justify-content: flex-end;
+    width: 100% !important ;
+}
+
