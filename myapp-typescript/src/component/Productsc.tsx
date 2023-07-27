@@ -4,10 +4,10 @@ import Lottie from 'react-lottie-player'
 import likeanimation from '../lotties/likeanimation.json'
 import { useContext } from 'react';
 import { BasketContext } from '../BasketContext';
-import { ProductsContext } from '../ProductsContext';
+import { Product, ProductsContext } from '../ProductsContext';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from "./Button"
-import { Product } from './Basketc';
+
 type ProductscProps = {
     product: Product;
 };
@@ -49,11 +49,11 @@ function Productsc(props: ProductscProps) {
                     animationData={likeanimation}
                     play
                     style={{ width: 50, height: 50 }} /> </div></div>
-                <img src={props.product.productPic} onClick={Detail} />
+                <img src={props.product.image} onClick={Detail} />
                 <div className='details'>
-                    <h1>{props.product.productName}</h1>
-                    <p className='desc'>{props.product.productDesc}</p>
-                    <p className='price'>{props.product.currentPrice} TL</p>
+                    <h1>{props.product.title}</h1>
+                    <p className='desc'>{props.product.description}</p>
+                    <p className='price'>{props.product.price} TL</p>
                     <Button className="addtobasket" label="Sepete Ekle " icon={<BsFillBasketFill/>} iconPosition="left" onClick={() => {
                         let tempBasket = [...basket];
                         let items = tempBasket.find(item => item.id === props.product.id);

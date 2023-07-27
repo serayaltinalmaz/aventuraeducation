@@ -7,7 +7,7 @@ import Basketprovider from './BasketContext';
 import Productsprovider from './ProductsContext';
 import EventProvider from './EventContext';
 import  DiscountProvider  from './DiscountContext';
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root') || document.createElement('div'));
 root.render(
   <BrowserRouter>
     <Productsprovider>

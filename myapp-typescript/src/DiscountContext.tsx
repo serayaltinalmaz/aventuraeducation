@@ -2,14 +2,25 @@ import React, { createContext, useState } from "react";
 import { BasketContext } from "./BasketContext";
 import { useContext, useEffect } from "react";
 
-export const DiscountContext = createContext();
+type DiscountContextType = {
+    discount : number;
+    setDiscount :(value: number) => void;
+    discountThreshold : number;
+    setDiscountThreshold : (value: number) => void;
+    discountPercent : number;
+    setDiscountPercent : (value: number) => void;
+    appliedDiscount : number;
+    setAppliedDiscount : (value: number) => void;
+};
 
-export const DiscountProvider = ({ children }) => {
+export const DiscountContext = createContext<DiscountContextType>({} as DiscountContextType);
+
+export const DiscountProvider = ({ children }:any) => {
     const { basketsum } = useContext(BasketContext);
     const [discount, setDiscount] = useState(basketsum);
-    const [discountThreshold, setDiscountThreshold] = useState();
-    const [discountPercent, setDiscountPercent] = useState();
-    const [appliedDiscount, setAppliedDiscount] = useState(0);
+    const [discountThreshold, setDiscountThreshold] = useState<number>(0);
+    const [discountPercent, setDiscountPercent] = useState<number>(0);
+    const [appliedDiscount, setAppliedDiscount] = useState<number>(0);
 
     const discountData = {
         discount,

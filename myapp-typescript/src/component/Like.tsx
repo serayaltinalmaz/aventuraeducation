@@ -4,27 +4,18 @@ import { useContext } from 'react';
 import { EventContext } from '../EventContext';
 import { ProductsContext } from '../ProductsContext';
 
-type Product = {
-    id: number;
-    productPic: string;
-    productName: string;
-    currentPrice: number;
-    count: number;
-    fav: boolean;
-};
-
 function Like() {
     const { likebar } = useContext(EventContext);
     const { products } = useContext(ProductsContext);
-    let favProducts = products.filter((product : Product) => product.fav === true);
+    let favProducts = products.filter((product) => product.fav === true);
     const displayedItems = favProducts.slice(0, 3); // İlk üç ürünü alacak şekilde listeyi sınırla
     return (
         <div className={likebar === true ? "likebasket-active" : "likebasket-closed"} >
-            {displayedItems.map((product : Product) => (
+            {displayedItems.map((product) => (
                 <div className='favproduct'>
-                    <img src={product.productPic}></img>
-                    <p>{product.productName}</p>
-                    <p>{product.currentPrice} TL</p>
+                    <img src={product.image}></img>
+                    <p>{product.title}</p>
+                    <p>{product.price} TL</p>
                 </div>
             ))}
             <Link to="favproductspage"> Favorileri gör</Link>

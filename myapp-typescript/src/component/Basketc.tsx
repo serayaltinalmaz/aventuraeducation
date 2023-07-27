@@ -5,16 +5,9 @@ import { BasketContext } from '../BasketContext';
 import Button from './Button';
 import { BsPlusLg } from "react-icons/bs"
 import { AiOutlineMinus } from "react-icons/ai"
+import { Product } from '../ProductsContext';
 
-export type Product = {
-    id: number;
-    productPic: string;
-    productName: string;
-    currentPrice: number;
-    count: number;
-    fav: boolean;
-    productDesc: number;
-};
+
 type BasketcProps = {
     changeCSS: boolean;
     product: Product;
@@ -26,9 +19,9 @@ function Basketc(props: BasketcProps) {
         <div className={`basketcomponent ${props.changeCSS === true && "basketcompenentborder"
             } `}>
             <div className='basketdetail'>
-                <img src={props.product.productPic}></img>
-                <p className='productname'>{props.product.productName}</p>
-                <p>{props.product.currentPrice} TL</p>
+                <img src={props.product.image}></img>
+                <p className='productname'>{props.product.title}</p>
+                <p>{props.product.price} TL</p>
             </div>
             <div className='count1'>
                 <div className='count2'>

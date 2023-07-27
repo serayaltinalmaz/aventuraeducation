@@ -6,17 +6,13 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import './Login.css';
 import Button from '../component/Button';
-import { BsFillBalloonHeartFill } from "react-icons/bs";
 import InputComponent from '../component/InputComponent';
 const Login = () => {
-
     const navigate = useNavigate();
-
     const validationSchema = Yup.object({
         username: Yup.string().required('Kullanıcı adı zorunludur').max(15, 'Kullanıcı adı en fazla 15 karakter olmalıdır.'),
         password: Yup.string().required('Şifre zorunludur')
     });
-
     const formik = useFormik({
         initialValues: {
             username: '',
@@ -34,7 +30,6 @@ const Login = () => {
     const RegisterNavigate = () => {
         navigate("/register");
     };
-
     return (
         <div className='login-background' style={{ display: "flex", justifyContent: "center", height: "100vh" }}>
             <form onSubmit={formik.handleSubmit}>

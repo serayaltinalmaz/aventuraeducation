@@ -3,7 +3,8 @@ import Basketc from '../component/Basketc'
 import { useContext } from 'react';
 import { BasketContext } from '../BasketContext';
 import { Outlet } from 'react-router-dom';
-import { Product } from '../component/Basketc';
+import { Product } from '../ProductsContext';
+
 const Basketpage = () => {
     const { basket } = useContext(BasketContext);
     return (

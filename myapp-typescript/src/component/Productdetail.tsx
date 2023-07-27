@@ -2,13 +2,11 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 import { BasketContext } from "../BasketContext";
-import { ProductsContext } from "../ProductsContext";
+import { Product, ProductsContext } from "../ProductsContext";
 import { EventContext } from "../EventContext";
 import Lottie from "react-lottie-player";
 import likeanimation from "../lotties/likeanimation.json";
 import { BsFillBasketFill } from "react-icons/bs";
-import { Product } from "./Basketc";
-
 
 const Productdetail = () => {
   const { sidebar, setSidebar, basket, setBasket, basketsum, setBasketsum } =
@@ -16,8 +14,9 @@ const Productdetail = () => {
   const { products, setProducts } = useContext(ProductsContext);
   const { sumcount, setSumcount, likebar, setLikebar } =
     useContext(EventContext);
-  const { id } = useParams();
-  const selectedProduct = products.find((product: Product) => product.id === Number(id));
+  //const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
+  const selectedProduct = products.find((product) => product.id === Number(id)) as Product;
   const [likesegment, setLikesegment] = useState([0, 115]);
   useEffect(() => {
     if (selectedProduct.fav) {
@@ -28,14 +27,14 @@ const Productdetail = () => {
   }, [selectedProduct.fav]);
   return (
     <div className="detpage">
-      <img src={selectedProduct.productPic} className="detpageimg" />
+      <img src={selectedProduct.image} className="detpageimg" />
       <div
         className="heart"
         onClick={() => {
           let tempProducts = [...products];
-          tempProducts.map((elma) => {
-            if (elma.id == id) {
-              if (elma.fav === true) {
+          tempProducts.map((product) => {
+            if (product.id == Number(id)) {
+              if (product.fav === true) {
                 selectedProduct.fav = false;
               } else {
                 selectedProduct.fav = true;
@@ -56,9 +55,9 @@ const Productdetail = () => {
         </div>
       </div>
       <div className="detpagedet">
-        <p className="detpagename">{selectedProduct.productName}</p>
-        <p className="detpagedesc">{selectedProduct.productDesc}</p>
-        <p className="detpageprice">{selectedProduct.currentPrice} TL</p>
+        <p className="detpagename">{selectedProduct.title}</p>
+        <p className="detpagedesc">{selectedProduct.description}</p>
+        <p className="detpageprice">{selectedProduct.price} TL</p>
         <button
           className="addtobasketdetpage"
           onClick={() => {

@@ -10,6 +10,7 @@
     "@types/node": "^16.18.39",
     "@types/react": "^18.2.16",
     "@types/react-dom": "^18.2.7",
+    "axios": "^1.4.0",
     "formik": "^2.4.2",
     "lottie": "^0.0.1",
     "react": "^18.2.0",

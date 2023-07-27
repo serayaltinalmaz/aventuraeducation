@@ -28,10 +28,11 @@ const Discount = () => {
         }
     }, []);// sayfa yüklendiğinde local storagedan verileri getitem ile al
 
+    
     useEffect(() => {
-        localStorage.setItem('discountThreshold', discountThreshold);
-        localStorage.setItem('discountPercent', discountPercent);
-    }, [discountThreshold, discountPercent]);// değerler değiştiğinde local storage a setitem ile kaydet
+        localStorage.setItem("discountThreshold", discountThreshold.toString());
+        localStorage.setItem("discountPercent", discountPercent.toString());
+    }, [discountThreshold, discountPercent]);
 
     const calculateDiscount = () => {
         if (basketsum >= discountThreshold) {
@@ -60,14 +61,14 @@ const Discount = () => {
             <InputComponent label="Kaç TL ve üzeri indirim uygulansın?"
                 className="discount-input"
                 type="number" 
-                value={discountThreshold} 
+                value={discountThreshold == 0 ? "" : discountThreshold.toString()} 
                 onChange={thresholdChange} 
             />
 
             <InputComponent label="Yüzde kaç indirim uygulansın?" 
                 className="discount-input"
                 type="number" 
-                value={discountPercent} 
+                value={discountPercent == 0 ? "" : discountPercent.toString()} 
                 onChange={percentChange} 
             />
             <Button label="Uygula" onClick={calculateDiscount} className="discount-button" />
