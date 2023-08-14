@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Lottie from 'react-lottie-player';
 import kopke from "../lotties/kopke.json";
 import { useNavigate } from 'react-router-dom';
@@ -7,23 +7,66 @@ import * as Yup from 'yup';
 import './Login.css';
 import Button from '../component/Button';
 import InputComponent from '../component/InputComponent';
+import axios from 'axios';
 const Login = () => {
     const navigate = useNavigate();
     const validationSchema = Yup.object({
         username: Yup.string().required('Kullanıcı adı zorunludur').max(15, 'Kullanıcı adı en fazla 15 karakter olmalıdır.'),
         password: Yup.string().required('Şifre zorunludur')
     });
+    // const getLogin= async() => {
+    //     const apiUrl = 'https://fakestoreapi.com/auth/login';
+    //     try {
+    //     const response = await axios.post(apiUrl);
+    //     return response.data
+    //     }catch (error: any) {
+    //         const newResponse = {
+    //             message: error.response.data.message,
+    //             success: error.response.data.success,
+    //         };
+    //         return newResponse;
+    //     }
+    // }
+    const getLogin = async () => {
+        const apiUrl = 'https://fakestoreapi.com/auth/login';
+        try {
+            const response = await axios.post(
+                apiUrl,
+                {
+                    username: formik.values.username,
+                    password: formik.values.password
+                },
+            );
+            console.log("elma",response);
+            return response.data;
+        } catch (error:any) {
+            console.error(error);
+            const newResponse = {
+                message: error.response.data.message,
+                success: error.response.data.success,
+            };
+            return newResponse;
+        }
+    };
+    
     const formik = useFormik({
         initialValues: {
             username: '',
             password: '',
         },
         validationSchema: validationSchema,
-        onSubmit: (values) => {
-            console.log(values);
-            LoginNavigate();
+        onSubmit: async () => {
+            const response = await getLogin();
+            console.log(response)
+            if (response) {
+                console.log(response.message);
+                LoginNavigate();
+            } else {
+                console.log("olmuyo abla", response.message);
+            }
         },
     });
+    
     const LoginNavigate = () => {
         navigate("/products");
     };

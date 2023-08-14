@@ -11,6 +11,7 @@ import Button from "./Button"
 type ProductscProps = {
     product: Product;
 };
+
 function Productsc(props: ProductscProps) {
     const { basket, setBasket } = useContext(BasketContext);
     const { products, setProducts } = useContext(ProductsContext)
