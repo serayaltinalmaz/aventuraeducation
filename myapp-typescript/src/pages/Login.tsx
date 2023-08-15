@@ -37,10 +37,10 @@ const Login = () => {
                     password: formik.values.password
                 },
             );
-            console.log("elma",response);
-            return response.data;
+            console.log("elma",response.status);
+            return response.status;
         } catch (error:any) {
-            console.error(error);
+            console.error(error.response);
             const newResponse = {
                 message: error.response.data.message,
                 success: error.response.data.success,
@@ -57,12 +57,13 @@ const Login = () => {
         validationSchema: validationSchema,
         onSubmit: async () => {
             const response = await getLogin();
+            console.log("olmuyo abla11")
             console.log(response)
-            if (response) {
-                console.log(response.message);
+            if (response==200) {
+                console.log(response);
                 LoginNavigate();
             } else {
-                console.log("olmuyo abla", response.message);
+                console.log("olmuyo abla", response);
             }
         },
     });
