@@ -20,30 +20,35 @@ export type Product = {
 type ProductsContextType = {
   products: Product[];
   setProducts: (data: Product[]) => void;
+  loading:boolean;
+  setLoading: React.Dispatch<boolean>
 };
 
 
-export const ProductsContext = createContext<ProductsContextType>({products: [],
-  setProducts: function (data: Product[]): void {
-    throw new Error("Function not implemented.");
-  },
+export const ProductsContext = createContext<ProductsContextType>({
+  products: [],
+  setProducts: (data: Product[]) => void {},
+  loading:false,
+  setLoading : ()=>{},
 });
 
 const Productsprovider = ({ children }: any) => {
     const [products, setProducts] = useState<Product[]>([]);
-
+    const [loading, setLoading] = useState<boolean>(false)
     const getProducts= async() => {
+      setLoading(true);
       const apiUrl = 'https://fakestoreapi.com/products';
       const response = await axios.get(apiUrl)
       if (response.status==200){
         setProducts(response.data)
+        setLoading(false);
       }
     }
     useEffect(() => {
       getProducts();
     }, [])
     
-  const productsdata = { products, setProducts };
+  const productsdata = { products, setProducts, loading, setLoading};
   return (
     <ProductsContext.Provider value={productsdata}>
       {children}
