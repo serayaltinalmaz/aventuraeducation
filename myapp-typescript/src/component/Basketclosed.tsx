@@ -8,7 +8,7 @@ import { Product } from "../ProductsContext";
 
 function Basketclosed() {
     const { basket, sidebar, basketsum } = useContext(BasketContext);
-    const displayedItems = basket.slice(0, 2); // İlk iki ürünü alacak şekilde listeyi sınırla
+    const displayedItems = basket.slice(0, 2); 
     const {
         discount,
         setDiscount,

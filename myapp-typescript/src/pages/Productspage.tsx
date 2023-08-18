@@ -13,26 +13,26 @@ const Productspage = () => {
   }, [products])
 
 
-  function alphSorted(){
+  const alphSorted = () => {
     let alphSorted = [...products];
     alphSorted.sort((a, b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0));
     console.log("A-Z", alphSorted);
     setTempProducts(alphSorted);
   }
-  function alphSortedReverse(){
+  const alphSortedReverse = () => {
     let alphSorted = [...products];
     let reverse = alphSorted.sort((a, b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0));
     reverse.reverse();
     console.log("Z-A", reverse);
     setTempProducts(reverse);
   }
-  function priceSorted(){
+  const priceSorted = () => {
     let priceSorted = [...products];
     priceSorted.sort((a, b) => (a.price > b.price) ? 1 : ((b.price > a.price) ? -1 : 0));
     console.log("D-Y", priceSorted);
     setTempProducts(priceSorted);
   }
-  function priceSortedReverse(){
+  const priceSortedReverse = () => {
     let priceSorted = [...products];
     let reverse = priceSorted.sort((a, b) => (a.price > b.price) ? 1 : ((b.price > a.price) ? -1 : 0));
     reverse.reverse();
