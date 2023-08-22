@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
-import { BasketContext } from "../BasketContext";
-import { Product, ProductsContext } from "../ProductsContext";
-import { EventContext } from "../EventContext";
+import { BasketContext } from "../Context/BasketContext";
+import { Product, ProductsContext } from "../Context/ProductsContext";
+import { EventContext } from "../Context/EventContext";
 import Lottie from "react-lottie-player";
 import likeanimation from "../lotties/likeanimation.json";
 import { BsFillBasketFill } from "react-icons/bs";

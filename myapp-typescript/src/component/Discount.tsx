@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from 'react'
 import { useContext, useEffect } from 'react';
-import { DiscountContext } from '../DiscountContext';
-import { BasketContext } from '../BasketContext';
+import { DiscountContext } from '../Context/DiscountContext';
+import { BasketContext } from '../Context/BasketContext';
 import Button from "./Button"
 import InputComponent from './InputComponent';
 

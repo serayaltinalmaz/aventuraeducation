@@ -1,7 +1,7 @@
 import React from "react";
 import Productsc from "../component/Productsc";
 import { useContext } from "react";
-import { Product, ProductsContext } from "../ProductsContext";
+import { Product, ProductsContext } from "../Context/ProductsContext";
 
 const Favproductspage = () => {
   const { products } = useContext(ProductsContext);

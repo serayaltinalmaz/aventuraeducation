@@ -2,9 +2,9 @@ import React from "react";
 import Basketc from "./Basketc";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { BasketContext } from "../BasketContext";
-import { DiscountContext } from "../DiscountContext";
-import { Product } from "../ProductsContext";
+import { BasketContext } from "../Context/BasketContext";
+import { DiscountContext } from "../Context/DiscountContext";
+import { Product } from "../Context/ProductsContext";
 
 function Basketclosed() {
     const { basket, sidebar, basketsum } = useContext(BasketContext);

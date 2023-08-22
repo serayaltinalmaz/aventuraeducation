@@ -1,9 +1,9 @@
 import React from 'react'
 import Basketc from '../component/Basketc'
 import { useContext } from 'react';
-import { BasketContext } from '../BasketContext';
+import { BasketContext } from '../Context/BasketContext';
 import { Outlet } from 'react-router-dom';
-import { Product } from '../ProductsContext';
+import { Product } from '../Context/ProductsContext';
 
 const Basketpage = () => {
     const { basket } = useContext(BasketContext);

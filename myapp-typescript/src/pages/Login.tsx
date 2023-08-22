@@ -4,7 +4,7 @@ import kopke from "../lotties/kopke.json";
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import './Login.css';
+import '../mycss/Login.css';
 import Button from '../component/Button';
 import InputComponent from '../component/InputComponent';
 import axios from 'axios';

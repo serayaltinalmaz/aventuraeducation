@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import NavlinkComponent from './NavlinkComponent';
-import { EventContext } from '../EventContext';
-import { BasketContext } from '../BasketContext';
+import { EventContext } from '../Context/EventContext';
+import { BasketContext } from '../Context/BasketContext';
 import { BsFillBasketFill } from 'react-icons/bs';
 import { AiOutlineHeart } from 'react-icons/ai';
 function Navbar() {

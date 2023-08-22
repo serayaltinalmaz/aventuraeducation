@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Lottie from 'react-lottie-player';
 import register from "../lotties/register.json";
-import "../pages/Register.css"
+import "../mycss/Register.css"
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';

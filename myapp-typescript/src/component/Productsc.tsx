@@ -3,8 +3,8 @@ import { BsFillBasketFill } from 'react-icons/bs';
 import Lottie from 'react-lottie-player'
 import likeanimation from '../lotties/likeanimation.json'
 import { useContext } from 'react';
-import { BasketContext } from '../BasketContext';
-import { Product, ProductsContext } from '../ProductsContext';
+import { BasketContext } from '../Context/BasketContext';
+import { Product, ProductsContext } from '../Context/ProductsContext';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from "./Button"
 

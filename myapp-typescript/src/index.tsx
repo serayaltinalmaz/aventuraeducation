@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import Basketprovider from './BasketContext';
-import Productsprovider from './ProductsContext';
-import EventProvider from './EventContext';
-import  DiscountProvider  from './DiscountContext';
+import Basketprovider from './Context/BasketContext';
+import Productsprovider from './Context/ProductsContext';
+import EventProvider from './Context/EventContext';
+import  DiscountProvider  from './Context/DiscountContext';
 const root = ReactDOM.createRoot(document.getElementById('root') || document.createElement('div'));
 root.render(
   <BrowserRouter>

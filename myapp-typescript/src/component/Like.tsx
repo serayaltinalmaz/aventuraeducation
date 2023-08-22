@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
-import { EventContext } from '../EventContext';
-import { ProductsContext } from '../ProductsContext';
+import { EventContext } from '../Context/EventContext';
+import { ProductsContext } from '../Context/ProductsContext';
 
 function Like() {
     const { likebar } = useContext(EventContext);

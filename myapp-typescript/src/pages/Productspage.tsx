@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Productsc from "../component/Productsc";
-import { Product, ProductsContext } from "../ProductsContext";
+import { Product, ProductsContext } from "../Context/ProductsContext";
 import { useContext } from "react";
 import Lottie from "react-lottie-player";
 import loadinglottie from "../lotties/loading.json"
+import { capitalize } from "../utils/capitalize";
 const Productspage = () => {
   const { products, loading, setLoading } = useContext(ProductsContext)
   const [tempProducts, setTempProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    setTempProducts(products)
+    setTempProducts(products);
+    capitalize("elma armut kel mahmut");
   }, [products])
 
 

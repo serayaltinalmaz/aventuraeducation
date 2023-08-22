@@ -1,5 +1,5 @@
 import React from 'react'
-import "../component/InputComponent.css"
+import "../mycss/InputComponent.css"
 
 export type InputComponentProps = {
     error?: string;

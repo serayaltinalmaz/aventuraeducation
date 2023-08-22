@@ -1,5 +1,5 @@
 import React from 'react'
-import "../component/Button.css"
+import "../mycss/Button.css"
 
 type ButtonProps = {
     label?: string;

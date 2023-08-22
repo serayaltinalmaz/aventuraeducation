@@ -1,11 +1,10 @@
-import React from 'react'
 import { RiDeleteBin5Line } from 'react-icons/ri';
 import { useContext } from 'react';
-import { BasketContext } from '../BasketContext';
+import { BasketContext } from '../Context/BasketContext';
 import Button from './Button';
 import { BsPlusLg } from "react-icons/bs"
 import { AiOutlineMinus } from "react-icons/ai"
-import { Product } from '../ProductsContext';
+import { Product } from '../Context/ProductsContext';
 
 
 type BasketcProps = {
