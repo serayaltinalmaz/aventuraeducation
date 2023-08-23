@@ -5,6 +5,7 @@ import { useContext } from "react";
 import Lottie from "react-lottie-player";
 import loadinglottie from "../lotties/loading.json"
 import { capitalize } from "../utils/capitalize";
+import { sumasString } from "../utils/sumasString";
 const Productspage = () => {
   const { products, loading, setLoading } = useContext(ProductsContext)
   const [tempProducts, setTempProducts] = useState<Product[]>([]);
@@ -12,6 +13,7 @@ const Productspage = () => {
   useEffect(() => {
     setTempProducts(products);
     capitalize("elma armut kel mahmut");
+    sumasString("1234","5678")
   }, [products])
 
 
