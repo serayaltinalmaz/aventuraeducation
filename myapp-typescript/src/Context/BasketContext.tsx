@@ -48,8 +48,6 @@ const Basketprovider = ({ children }:any) => {
         if (countsum === 0) {
             setSumcount(0)
         }
-        let date = new Date();
-        console.log(date);
         getBasket();
     }, [basket])
 

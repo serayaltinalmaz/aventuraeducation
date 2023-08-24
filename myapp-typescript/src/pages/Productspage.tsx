@@ -13,7 +13,7 @@ const Productspage = () => {
   useEffect(() => {
     setTempProducts(products);
     capitalize("elma armut kel mahmut");
-    sumasString("1234","5678")
+    sumasString("5678","129456") //135134 15134
   }, [products])
 
 
