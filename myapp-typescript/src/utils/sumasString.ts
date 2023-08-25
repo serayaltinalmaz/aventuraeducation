@@ -11,7 +11,7 @@ export const sumasString = (number1:string, number2:string) => {
     console.log("sayı 1",array1,"sayı 2",array2)
     let sum = []; 
     let kalan = 0;
-    let i = array1.length-1;
+    let i = maxLength-1;
     for (i; i >= 0; i--){
         let sum2 = Number(array1[i]) + Number(array2[i]) + kalan;
         console.log(sum2)
@@ -23,8 +23,10 @@ export const sumasString = (number1:string, number2:string) => {
             sum.push(sum2);
         }
     } 
-    console.log(sum);
-}
+    let sumasString=sum.reverse().join("");
+    console.log(sumasString);
+    return sumasString
+} 
 
 // export const sumasStringdeneme = (number1:string, number2:string) => {
 //     let array1 = number1.split("");
