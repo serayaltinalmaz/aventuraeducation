@@ -62,6 +62,8 @@ const Productspage = () => {
   const multi = () => {
     console.log(input1Value,input2Value)
     multiplicationTable(Number(input1Value),Number(input2Value));
+    setInput1Value("");
+    setInput2Value("");
   };
 
   return (

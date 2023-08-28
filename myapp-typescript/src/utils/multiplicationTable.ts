@@ -1,4 +1,10 @@
 export const multiplicationTable = (start:number,finish:number) => {
+    if(start>finish){
+        let tempStart = start;
+        let tempFinish = finish;
+        start = tempFinish;
+        finish = tempStart;
+    }
     let array1:any= [];
     for(let z = start; z<=finish; z++ ){
         array1.push(z)
@@ -12,15 +18,3 @@ export const multiplicationTable = (start:number,finish:number) => {
         }
     }
 }
-
-
-// export const multiplicationTable = () => {
-//     let array1= [1,2,3,4,5,6,7,8,9];
-//     let array2= array1;
-//     for(let i=0; i <= 8; i++){
-//         for (let j=0; j <= 8; j++){
-//         let multi = array1[i] * array2[j]  
-//         console.log("array1[i]",array1[i],"*","array2",array2[j],"=","multiiii",multi)
-//         }
-//     }
-// }
