@@ -6,17 +6,20 @@ import Lottie from "react-lottie-player";
 import loadinglottie from "../lotties/loading.json"
 import { capitalize } from "../utils/capitalize";
 import { sumasString } from "../utils/sumasString";
+import { multiplicationTable } from "../utils/multiplicationTable"
+import InputComponent from "../component/InputComponent";
 const Productspage = () => {
   const { products, loading, setLoading } = useContext(ProductsContext)
   const [tempProducts, setTempProducts] = useState<Product[]>([]);
 
+  
   useEffect(() => {
     setTempProducts(products);
-    capitalize("elma armut kel mahmut");
-    sumasString("5678","129456") //135134 15134
+    //capitalize("elma armut kel mahmut");
+    //sumasString("5678","129456");
   }, [products])
 
-
+  
   const alphSorted = () => {
     let alphSorted = [...products];
     alphSorted.sort((a, b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0));
@@ -43,8 +46,36 @@ const Productspage = () => {
     console.log("Y-D", reverse);
     setTempProducts(reverse);
   }
+  
+
+  const [input1Value, setInput1Value] = useState<string>("");
+  const [input2Value, setInput2Value] = useState<string>("");
+
+  const handleInput1Change = (event:any) => {
+    setInput1Value(event.target.value);
+  };
+
+  const handleInput2Change = (event:any) => {
+    setInput2Value(event.target.value);
+  };
+
+  const multi = () => {
+    console.log(input1Value,input2Value)
+    multiplicationTable(Number(input1Value),Number(input2Value));
+  };
+
   return (
     <>
+    <button onClick={multi}>Çarpım Tablosu Oluştur</button>
+    <input
+          value={input1Value}
+          onChange={handleInput1Change}
+        />
+    <input
+          value={input2Value}
+          onChange={handleInput2Change}
+        />
+
       <div className="dropdown">
         <button className="dropbtn">Filtrele</button>
         <div className="dropdown-content">
@@ -73,6 +104,3 @@ const Productspage = () => {
 };
 
 export default Productspage;
-
-//objs.sort((a,b) => (a.last_nom > b.last_nom) ? 1 : ((b.last_nom > a.last_nom) ? -1 : 0)) stackoverflowdan buldum
-//objs.sort((a,b) => a.last_nom - b.last_nom); // b - a for reverse sort
